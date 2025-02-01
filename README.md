@@ -38,8 +38,9 @@ To get started with Affilio, follow these steps:
 ## Usage
 To run the project, use the following command:
 ```sh
-docker compose up
 docker compose build
+docker compose up
+
 ```
 For more detailed usage instructions, refer to the [documentation](link-to-documentation).
 
