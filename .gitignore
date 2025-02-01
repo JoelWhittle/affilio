@@ -34,3 +34,5 @@ backend/affilio/.env
 # Ignore Angular cache files
 **/.angular
 affiliate-sites/affilio-client/.angular
+
+/backend/affilio/.env.docker 
