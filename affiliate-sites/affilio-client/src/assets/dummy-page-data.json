@@ -1,0 +1,308 @@
+[
+  {
+    "slug": "test",
+    "title": "Rabbit Care Guide",
+    "heroImage": {
+      "src": "../assets/rabbit-background.png",
+      "altText": "Hero image of a rabbit",
+      "imagePosition": "center"
+    },
+    "subtitle": "Your guide for caring for your furry friend.",
+    "lastModified": "20 Nov 24",
+    "content": [
+      {
+        "type": "text-section",
+        "title": "It's Good to Care",
+        "paragraphs": [
+          {
+            "text": "<p> left Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.</p>"
+          },
+          {
+            "text": "<p> left Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits  are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.Rabbits are wonderful pets that require proper care to live happy, healthy lives. In this guide, we cover the essentials every rabbit owner should know.</p>",
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A rabbit in a lush green field",
+              "imagePosition": "left",
+            "caption": "test caption"
+            },
+            "ctas":[
+              {
+                "text": "dummy test",
+                "accent": "true",
+                "targetUrl": "test",
+                "identifier": "ident",
+                "source": "source"
+              }
+                          ]
+          },
+          {
+            "text": "<p>  rightProper feeding and housing are essential for your rabbit's health. Understanding these basics will help keep your furry friend happy and well-cared-for.</p>",
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A bowl of rabbit food",
+              "imagePosition": "right",
+              "caption": "test caption biggerrer"
+
+            },
+            "ctas":[
+{
+  "text": "dummy test",
+  "accent": "true",
+  "targetUrl": "test",
+  "identifier": "ident",
+  "source": "source"
+}
+            ]
+          },
+          {
+            "text": "<p> below Proper feeding and housing are essential for your rabbit's health. Understanding these basics will help keep your furry friend happy and well-cared-for.</p>",
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A bowl of rabbit food",
+              "imagePosition": "below"
+            },
+            "ctas":[
+              {
+                "text": "dummy test primary",
+                "accent": "false",
+                "targetUrl": "test",
+                "identifier": "ident",
+                "source": "source",
+                "caption": "test caption"
+
+              }
+                          ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "test2",
+    "title": "Best Rabbit Hutches to Buy in 2024",
+    "authorName": "May",
+    "authorImage":{
+
+        "src": "../assets/may2.png",
+        "altText": "May"
+
+    },
+    "heroImage": {
+      "src": "../assets/rabbit-background.png",
+      "altText": "Hero image of a rabbit",
+      "imagePosition": "center"
+    },
+    "subtitle": "A Comprehensive Guide for Rabbit Lovers",
+    "lastModified": "20 Nov 24",
+    "content": [
+      {
+        "type": "text-section",
+        "title": "It's Good to Care",
+        "paragraphs": [
+          {
+            "text": "<p>Choosing the perfect hutch for your rabbit is one of the most important decisions you'll make as a pet owner. A rabbit’s hutch isn’t just a shelter—it’s their safe haven, playground, and cozy retreat all rolled into one. The right hutch ensures your furry friend stays happy, healthy, and secure, whether they're hopping around indoors or basking in the fresh air outside.</p><p>In this guide, we’ve rounded up the <strong>best rabbit hutches of 2024</strong>, from spacious multi-level homes to weatherproof outdoor enclosures. Whether you’re looking for something stylish to complement your home, durable to withstand outdoor elements, or compact for smaller spaces, we’ve got options to suit every need and budget.</p><p>Not only will we highlight the standout features of each hutch, but we’ll also dive into what makes a great rabbit hutch, ensuring you have all the information needed to make an informed purchase. Plus, we’ll share some handy tips to maximize your rabbit’s comfort and well-being in their new home.</p><p>Let’s hop to it—your rabbit deserves the very best!</p>"
+          }
+        ]
+      },
+      {
+        "type": "comparison-table",
+        "items": [
+          {
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A rabbit in a lush green field"
+            },
+                        "tag": "Editor's Choice",
+            "description": "A top-notch product with exceptional performance and value.",
+            "name": "mega hutch with extras",
+            "starRatings": {
+              "Price": 5,
+              "Durability": 4,
+              "Quality": 5
+            },
+            "cta": {
+              "text": "Check Price",
+              "accent": "true",
+              "targetUrl": "test",
+              "identifier": "ident",
+              "source": "source"
+            }
+          },
+          {
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A rabbit in a lush green field"
+            },
+                        "tag": "Best Value",
+            "name": "Cheap Hutch",
+            "description": "An affordable option offering great features for the price.",
+            "starRatings": {
+              "Price": 4,
+              "Durability": 3,
+              "Quality": 4
+            },
+            "cta": {
+              "text": "Check Price",
+              "accent": "true",
+              "targetUrl": "test",
+              "identifier": "ident",
+              "source": "source"
+            }
+          },
+          {
+            "image": {
+              "src": "../assets/rabbit-background.png",
+              "altText": "A rabbit in a lush green field"
+            },
+                        "description": "A high-end product designed for the most discerning users.",
+            "name": "super hutch",
+            "starRatings": {
+              "Price": 3,
+              "Durability": 5,
+              "Quality": 5
+            },
+            "cta": {
+              "text": "Check Price",
+              "accent": "true",
+              "targetUrl": "test",
+              "identifier": "ident",
+              "source": "source"
+            }
+          }
+        ]
+      },
+      {
+        "type": "product-reccomendation",
+        "item": {
+          "name": "mega hutch with extras",
+          "left": false,
+          "tag": "#1 Product Reccomendation",
+        "textFirst": "<p>When it comes to finding the best rabbit hutch of 2024, one model stands out above the rest for its thoughtful design, durability, and comfort. This hutch is a true game-changer for rabbit owners, offering ample space for your bunny to hop, stretch, and relax. With multiple levels, a cozy nesting area, and a secure run, it’s perfect for keeping your rabbit entertained and active while ensuring they feel safe and at home.</p>  <p>What truly sets this hutch apart is its superior build quality. Crafted from weather-resistant materials and reinforced with sturdy wire mesh, it’s designed to withstand the elements and keep predators at bay, making it ideal for outdoor use. The spacious interior is easy to clean thanks to removable trays, while features like a ramp with grip bars and a lockable door ensure convenience and peace of mind for owners. It’s not just a hutch—it’s a luxurious, secure sanctuary for your rabbit.</p>",
+        "textSecond": "<p>Beyond practicality, this hutch also earns style points. Its sleek design and natural wood finish make it an attractive addition to any garden or patio, blending functionality with aesthetics. Whether you’re a first-time rabbit owner or a seasoned pro, this hutch checks all the boxes for a happy, healthy bunny.</p>",
+        "image": {
+          "src": "../assets/rabbit-background.png",
+          "altText": "A rabbit in a lush green field"
+        },
+        "starRatings": {
+          "Price": 3,
+          "Durability": 5,
+          "Quality": 5
+        },
+        "cta": {
+          "text": "Check Price",
+          "accent": "true",
+          "targetUrl": "test",
+          "identifier": "ident",
+          "source": "source"
+        }
+      }
+      },
+      {
+        "type": "product-reccomendation",
+        "item": {
+          "name": "The Cozy Cottage Hutch",
+          "tag": "",
+          "left": true,
+        "textFirst": "<p>The Cozy Cottage Hutch is a fantastic choice for rabbit owners who want a balance of comfort, functionality, and aesthetic appeal. With its natural wood finish and charming pitched roof, this hutch complements any garden setting. The spacious design offers plenty of room for your rabbit to move around, ensuring they stay happy and active.</p><p>Inside, the Cozy Cottage Hutch provides a safe and secure environment for your bunny. The enclosed sleeping area is perfect for a cozy retreat, while the open run allows for fresh air and playtime. The sturdy wire mesh protects your pet from predators while giving them visibility and interaction with their surroundings.</p>",
+        "textSecond": "<p>Maintenance is straightforward with features like slide-out trays for easy cleaning and multiple access points for feeding and care. Constructed from weather-resistant materials, this hutch is built to withstand the elements, making it a reliable choice for year-round use. It's a combination of style and practicality that’s hard to beat.</p>",
+        "image": {
+          "src": "../assets/rabbit-background.png",
+          "altText": "A rabbit in a lush green field"
+        },
+        "starRatings": {
+          "Price": 3,
+          "Durability": 5,
+          "Quality": 5
+        },
+        "cta": {
+          "text": "Check Price",
+          "accent": "true",
+          "targetUrl": "test",
+          "identifier": "ident",
+          "source": "source"
+        }
+      }
+      },
+      {
+        "type": "product-reccomendation",
+        "item": {
+          "name": "The Deluxe Rabbit Retreat",
+          "tag": "",
+          "left": false,
+        "textFirst": "<p>If you’re looking for a rabbit hutch that combines luxury with functionality, the Deluxe Rabbit Retreat is an excellent choice. This premium hutch features a multi-level design with ramps, platforms, and a spacious run, giving your rabbit plenty of opportunities for exercise and exploration. The enclosed upper level offers a private space for resting and sleeping, while the open run allows them to enjoy the outdoors safely.</p>",
+        "textSecond": "<p>What makes the Deluxe Rabbit Retreat truly special is its attention to detail. The hutch is crafted from high-quality materials, including a waterproof roof and anti-rust mesh for long-lasting durability. It also includes thoughtful touches like a locking door for security and rubber-coated ramps for easy climbing. Whether you have one rabbit or a bonded pair, this hutch provides a comfortable and stylish home they’ll love.</p>",
+        "image": {
+          "src": "../assets/rabbit-background.png",
+          "altText": "A rabbit in a lush green field"
+        },
+        "starRatings": {
+          "Price": 3,
+          "Durability": 5,
+          "Quality": 5
+        },
+        "cta": {
+          "text": "Check Price",
+          "accent": "true",
+          "targetUrl": "test",
+          "identifier": "ident",
+          "source": "source"
+        }
+      }
+      },
+      {
+        "type": "text-section",
+        "title": "Buyers Guide",
+        "paragraphs": [
+          {
+            "text": "  <p>When it comes to selecting the perfect hutch for your rabbit, comfort, safety, and practicality should be your top priorities. Each hutch in our list offers unique features that cater to different needs, making it easier for you to find the right fit for your furry friend. Let’s summarize the key highlights of our top three recommendations:</p><h3>1. The Superior Bunny Mansion</h3><p>If you want to provide your rabbit with the ultimate in space and luxury, the Superior Bunny Mansion is your best bet. Its expansive layout ensures plenty of room for exercise, while the multi-level design offers variety and stimulation. The weather-resistant build and premium materials make it ideal for both indoor and outdoor use. With its thoughtful features like a slide-out tray and secure locks, this hutch combines style, functionality, and security seamlessly.</p><h3>2. The Cozy Cottage Hutch</h3><p>For a practical and stylish option that doesn’t compromise on comfort, the Cozy Cottage Hutch is a fantastic choice. Its compact yet spacious design offers a cozy sleeping area and a secure open run for play. Made from durable, weather-resistant materials, it’s designed to withstand the elements while ensuring your rabbit stays safe. The charming wood finish adds a rustic touch to your garden, and the easy-to-clean trays make maintenance a breeze.</p><h3>3. The Deluxe Rabbit Retreat</h3><p>The Deluxe Rabbit Retreat is perfect for owners looking to balance luxury and functionality. This multi-level hutch provides ample space for climbing, hopping, and relaxing, making it ideal for active rabbits. Its thoughtful design includes rubber-coated ramps, a secure locking door, and a waterproof roof for all-weather use. The high-quality construction ensures durability, and the spacious layout is perfect for one or more rabbits.</p>"
+          }
+        ]
+      },
+      {
+        "type": "text-section",
+        "title": "Conclusion: Give Your Bunny the Best",
+        "paragraphs": [
+          {
+            "text": "  <p>Rabbits are more than just pets—they’re cherished members of the family. Providing them with a safe, comfortable, and stimulating home is essential for their health and happiness. The right hutch can make all the difference, ensuring your bunny has the space, security, and features they need to thrive.</p><p>From the spacious luxury of the Superior Bunny Mansion to the charming practicality of the Cozy Cottage Hutch, and the versatile design of the Deluxe Rabbit Retreat, there’s an option to suit every rabbit and owner. Consider your rabbit’s size, personality, and your available space when making your decision.</p><p>Investing in a high-quality hutch is a long-term commitment to your rabbit’s well-being. Whichever hutch you choose, your furry friend is sure to enjoy a happy and healthy life in their new home. Here's to creating a cozy and loving environment for your beloved bunny!</p>"
+          }
+        ]
+      },
+      {
+        "type": "final-reccomendation",
+        "item": {
+          "name": "The Cozy Cottage Hutch",
+          "tag": "",
+          "left": true,
+        "textFirst": "<p>The Cozy Cottage Hutch is a fantastic choice for rabbit owners who want a balance of comfort, functionality, and aesthetic appeal. With its natural wood finish and charming pitched roof, this hutch complements any garden setting. The spacious design offers plenty of room for your rabbit to move around, ensuring they stay happy and active.</p><p>Inside, the Cozy Cottage Hutch provides a safe and secure environment for your bunny. The enclosed sleeping area is perfect for a cozy retreat, while the open run allows for fresh air and playtime. The sturdy wire mesh protects your pet from predators while giving them visibility and interaction with their surroundings.</p>",
+        "image": {
+          "src": "../assets/rabbit-background.png",
+          "altText": "A rabbit in a lush green field"
+        },
+        "starRatings": {
+          "Price": 3,
+          "Durability": 5,
+          "Quality": 5
+        },
+        "cta": {
+          "text": "Check Price",
+          "accent": "true",
+          "targetUrl": "test",
+          "identifier": "ident",
+          "source": "source"
+        }
+      }
+      },
+      {
+        "type": "author-box",
+        "item":{
+        "title": "Conclusion: Give Your Bunny the Best",
+        "paragraphs": [
+          {
+            "text": "  <p>Rabbits are more than just pets—they’re cherished members of the family. Providing them with a safe, comfortable, and stimulating home is essential for their health and happiness. The right hutch can make all the difference, ensuring your bunny has the space, security, and features they need to thrive.</p><p>From the spacious luxury of the Superior Bunny Mansion to the charming practicality of the Cozy Cottage Hutch, and the versatile design of the Deluxe Rabbit Retreat, there’s an option to suit every rabbit and owner. Consider your rabbit’s size, personality, and your available space when making your decision.</p><p>Investing in a high-quality hutch is a long-term commitment to your rabbit’s well-being. Whichever hutch you choose, your furry friend is sure to enjoy a happy and healthy life in their new home. Here's to creating a cozy and loving environment for your beloved bunny!</p>"
+          }
+        ]
+      }
+      }
+    ]
+  }
+]

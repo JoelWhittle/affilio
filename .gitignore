@@ -34,7 +34,3 @@ backend/affilio/.env
 # Ignore Angular cache files
 **/.angular
 affiliate-sites/affilio-client/.angular
-
-
-# Ignore node_modules for both projects
-affiliate-sites/affilio-client/src/assets
