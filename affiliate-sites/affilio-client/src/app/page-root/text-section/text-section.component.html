@@ -1,0 +1,112 @@
+<div class="text-section">
+  <h2>{{ metadata.title }}</h2>
+
+  <div *ngFor="let paragraph of metadata.paragraphs" class="paragraph-container">
+    <div *ngIf="!paragraph.image" class="paragraph-content">
+      <div class="paragraph-text-wrapper">
+        <div class="paragraph-text" [innerHTML]="sanitizeHtml(paragraph.text)"></div>
+
+        <div class="cta-buttons" *ngIf="paragraph.ctas && paragraph.ctas.length > 0">
+          <app-cta-button
+            *ngFor="let cta of paragraph.ctas"
+            [identifier]="cta.identifier"
+            [targetUrl]="cta.targetUrl"
+            [source]="cta.source"
+            [text]="cta.text"
+            [accent]="cta.accent"
+          >
+            {{ cta.text }}
+          </app-cta-button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div *ngIf="paragraph.image?.imagePosition === 'left'" class="paragraph-content">
+      <div class="paragraph-text-wrapper">
+        <div class="paragraph-text" [innerHTML]="sanitizeHtml(paragraph.text)"></div>
+
+        <div class="cta-buttons" *ngIf="paragraph.ctas && paragraph.ctas.length > 0">
+          <app-cta-button
+            *ngFor="let cta of paragraph.ctas"
+            [identifier]="cta.identifier"
+            [targetUrl]="cta.targetUrl"
+            [source]="cta.source"
+            [text]="cta.text"
+            [accent]="cta.accent"
+          >
+            {{ cta.text }}
+          </app-cta-button>
+        </div>
+      </div>
+      <div class="paragraph-image" *ngIf="paragraph.image">
+        <img [src]="paragraph.image.src" [alt]="paragraph.image.altText" />
+        <div class="image-caption" *ngIf="paragraph.image.caption">
+          {{ paragraph.image.caption }}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="paragraph.image?.imagePosition === 'right'" class="paragraph-content image-right">
+      <div class="paragraph-text-wrapper">
+        <div class="paragraph-text" [innerHTML]="sanitizeHtml(paragraph.text)"></div>
+
+        <div class="cta-buttons" *ngIf="paragraph.ctas && paragraph.ctas.length > 0">
+          <app-cta-button
+            *ngFor="let cta of paragraph.ctas"
+            [identifier]="cta.identifier"
+            [targetUrl]="cta.targetUrl"
+            [source]="cta.source"
+            [text]="cta.text"
+            [accent]="cta.accent"
+          >
+            {{ cta.text }}
+          </app-cta-button>
+        </div>
+      </div>
+      <div class="paragraph-image">
+        <img [src]="paragraph.image?.src" [alt]="paragraph.image?.altText" />
+        <div class="image-caption" *ngIf="paragraph.image?.caption">
+          {{ paragraph.image?.caption }}
+        </div>
+      </div>
+
+
+  </div>
+
+
+
+
+
+
+  <div *ngIf="paragraph.image?.imagePosition === 'below'" class="paragraph-content image-below">
+
+    <div class="paragraph-text-wrapper">
+      <div class="paragraph-text" [innerHTML]="sanitizeHtml(paragraph.text)"></div>
+
+      <div class="cta-buttons" *ngIf="paragraph.ctas && paragraph.ctas.length > 0">
+        <app-cta-button
+          *ngFor="let cta of paragraph.ctas"
+          [identifier]="cta.identifier"
+          [targetUrl]="cta.targetUrl"
+          [source]="cta.source"
+          [text]="cta.text"
+          [accent]="cta.accent"
+        >
+          {{ cta.text }}
+        </app-cta-button>
+      </div>
+    </div>
+    <div class="paragraph-image">
+      <img [src]="paragraph.image?.src" [alt]="paragraph.image?.altText" />
+      <div class="image-caption" *ngIf="paragraph.image?.caption">
+        {{ paragraph.image?.caption }}
+      </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,119 @@
+// Import Angular Material's core module
+@use '@angular/material' as mat;
+
+
+
+// Primary and Accent Colors
+$primary: #3e2723; // Dark brown for footer (primary color)
+$accent: #ffcc80;  // Light orange accent color
+$secondary: #ffab91; // Soft orange for links
+
+// Background and UI Elements
+$text:  lighten($primary, 90%); // Text color contrast (white)
+$text-muted: lighten($primary, 60%); // Muted gray for footer bottom text
+$text-dark: darken($primary, 60%); // Muted gray for footer bottom text
+
+// $primary-variant: #4e342e; // Slightly lighter brown for footer bottom
+$primary-variant: lighten($primary, 3%);// Slightly lighter brown for footer bottom
+
+$background: lighten($primary, 70%); // Accent shades
+$background-light-variant: lighten($background, 4%); // Accent shades
+$background-dark-variant: darken($background, 4%); // Accent shades
+
+// Dark brown for footer (primary color)
+
+
+// Muted text colors
+
+
+
+
+// Define your base colors
+$base-primary-color: $primary; // Replace with your preferred base primary color
+$base-accent-color: $accent;  // Replace with your preferred base accent color
+$base-warn-color: #f44336;    // Replace with your preferred base warn color
+
+
+// Create a custom primary palette
+$custom-primary-palette: mat.define-palette((
+  50: lighten($base-primary-color, 52%), // Lighter shades
+  100: lighten($base-primary-color, 37%),
+  200: lighten($base-primary-color, 26%),
+  300: lighten($base-primary-color, 12%),
+  400: lighten($base-primary-color, 6%),
+  500: $base-primary-color,              // Base color
+  600: darken($base-primary-color, 6%),  // Darker shades
+  700: darken($base-primary-color, 12%),
+  800: darken($base-primary-color, 18%),
+  900: darken($base-primary-color, 24%),
+  A100: lighten($base-primary-color, 65%), // Accent shades
+  A200: lighten($base-primary-color, 45%),
+  A400: darken($base-primary-color, 18%),
+  A700: darken($base-primary-color, 30%),
+  contrast: (
+    50: black, // Use black text for lighter shades
+    100: black,
+    200: black,
+    300: black,
+    400: white, // Switch to white text for darker shades
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white,
+  ),
+));
+
+// Create a custom accent palette
+$custom-accent-palette: mat.define-palette((
+  50: lighten($base-accent-color, 52%),
+  100: lighten($base-accent-color, 37%),
+  200: lighten($base-accent-color, 26%),
+  300: lighten($base-accent-color, 12%),
+  400: lighten($base-accent-color, 6%),
+  500: $base-accent-color,
+  600: darken($base-accent-color, 6%),
+  700: darken($base-accent-color, 12%),
+  800: darken($base-accent-color, 18%),
+  900: darken($base-accent-color, 24%),
+  A100: lighten($base-accent-color, 65%),
+  A200: lighten($base-accent-color, 45%),
+  A400: darken($base-accent-color, 18%),
+  A700: darken($base-accent-color, 30%),
+  contrast: (
+    50: black,
+    100: black,
+    200: black,
+    300: black,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: black,
+    A200: black,
+    A400: white,
+    A700: white,
+  ),
+));
+
+// Create a warn palette (using predefined Material red as an example)
+$custom-warn-palette: mat.define-palette(mat.$red-palette);
+
+// Define the Angular Material theme
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-primary-palette,
+    accent: $custom-accent-palette,
+    warn: $custom-warn-palette,
+    secondary: $custom-warn-palette
+  ),
+));
+
+// Apply the theme globally
+@include mat.all-component-themes($custom-theme);

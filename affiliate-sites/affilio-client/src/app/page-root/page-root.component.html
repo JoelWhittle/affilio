@@ -1,0 +1,79 @@
+
+<div *ngIf="v2">
+
+  <div *ngIf="pageContent">
+
+    <div *ngFor="let component of pageContent.components">
+
+    <app-hero *ngIf="component.type === 'HERO'"
+    [title]="component.metadata.title"
+    [subtitle]="component.metadata.subtitle"
+    [backgroundImage]="component.media[0]?.src"
+    [lastModified]="pageContent.blogPost?.updatedAt"
+    [author]="pageContent.blogPost?.author ?? null"
+    [ctas]="component.metadata.ctas"
+    [componentId]="component.id"
+    >
+  </app-hero>
+
+
+
+  <app-newsletter-signup *ngIf="component.type === 'NEWSLETTER'"
+    [title]="component.metadata.title"
+    [subtitle]="component.metadata.subtitle"
+></app-newsletter-signup >
+
+
+
+<app-featured-blog-posts *ngIf="component.type === 'FEATURED-BLOGS'"
+
+></app-featured-blog-posts >
+
+
+
+<app-product-highlight *ngIf="component.type === 'FEATURED-PRODUCTS'"
+
+></app-product-highlight>
+
+
+<app-home-copy *ngIf="component.type === 'HOME-COPY-TEXT'"
+[metadata]="component.metadata"
+[componentId]="component.id"
+></app-home-copy >
+
+<app-social-activity *ngIf="component.type === 'LATEST-SOCIAL-MEDIA'"
+[metadata]="component.metadata"
+
+></app-social-activity >
+
+<app-we-support *ngIf="component.type === 'WE-SUPPORT-BANNER'"
+[metadata]="component.metadata"
+></app-we-support >
+
+
+<app-text-section *ngIf="component.type === 'TEXT-SECTION'"
+[metadata]="component.metadata"
+></app-text-section >
+
+<app-comparison-table *ngIf="component.type === 'PRODUCT-COMPARISON-TABLE'"
+[metadata]="component.metadata"
+[affiliateProducts]="component.affiliateProducts"
+></app-comparison-table >
+
+<app-product-reccomendation *ngIf="component.type === 'PRODUCT-RECCOMENDATION'"
+[metadata]="component.metadata"
+[affiliateProduct]="component.affiliateProducts[0]"
+></app-product-reccomendation>
+
+<app-final-reccomendation *ngIf="component.type === 'PRODUCT-RECCOMENDATION-FINAL'"
+[metadata]="component.metadata"
+[affiliateProduct]="component.affiliateProducts[0]"
+></app-final-reccomendation>
+
+  </div>
+
+
+  <app-author-box *ngIf="pageContent.blogPost?.author"
+  [item]="pageContent.blogPost?.author"></app-author-box>
+
+  </div>

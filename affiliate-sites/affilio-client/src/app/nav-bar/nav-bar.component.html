@@ -1,0 +1,24 @@
+<mat-toolbar class="navbar">
+  <!-- Logo Section -->
+  <div>
+    <span class="navbar-logo">
+      <img src="{{tenant()?.metadata?.header?.logo}}" alt="Logo" height="40">
+    </span>
+    <span class="nav-brand">
+      {{tenant()?.metadata?.header?.brandText}}
+    </span>
+  </div>
+  <!-- Navbar links (hidden on smaller screens) -->
+  <span class="navbar-links" fxHide fxShow.gt-sm [class.show-nav]="showMenu">
+    <a mat-button routerLink="/about" (click)="closeMenu()">About</a>
+    <a mat-button routerLink="/services" (click)="closeMenu()">Blog</a>
+    <a mat-button routerLink="/contact" (click)="closeMenu()">Contact</a>
+    <button mat-button class="cta-button2" (click)="closeMenu()">Shop</button>
+  </span>
+  <!-- Hamburger menu button (shown on smaller screens) -->
+  <button mat-icon-button class="navbar-menu" fxHide.gt-sm (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<!-- Background overlay -->
+<div class="overlay" [class.show-overlay]="showMenu" (click)="closeMenu()"></div>

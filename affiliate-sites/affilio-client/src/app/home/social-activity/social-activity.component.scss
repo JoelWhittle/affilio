@@ -1,0 +1,73 @@
+@import '../../../custom-theme.scss'; // Import your Material theme
+.social-activity {
+  background-color: $background-light-variant;
+  color: $text-dark;
+  text-align: center;
+
+
+
+
+  .social-posts-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .social-post-card {
+    border-radius: 8px;
+    background-color: $background-light-variant;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .social-post-header {
+      display: flex;
+      align-items: center; /* Ensures vertical alignment */
+      padding: 0px;
+      background-color: $background-dark-variant;
+      color: $primary;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    .platform-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      vertical-align: middle; /* Fixes the vertical alignment of the icon */
+    }
+
+
+
+
+    mat-card-content {
+
+
+      .thumbnail-container {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .thumbnail {
+        max-width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+        height: auto;
+      }
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: flex-end; /* Buttons on the right */
+      padding: 10px;
+    }
+  }
+}

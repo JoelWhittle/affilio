@@ -1,0 +1,28 @@
+<section class="product-highlight" >
+  <h2>Featured Products</h2>
+  <div class="product-grid" [style.grid-template-columns]="gridCols">
+    <div *ngFor="let product of featuredProducts" class="product-item">
+      <mat-card class="product-card">
+        <mat-card-header>
+          <mat-card-title>{{ product.title }}</mat-card-title>
+          <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="product.image" alt="{{ product.title }}">
+        <mat-card-content>
+          <p>{{ product.description }}</p>
+          <small class="last-modified">Last Modified: {{ product.lastModified | date: 'mediumDate' }}</small>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToProduct(product.link)">
+            View Product
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="view-all">
+    <button mat-raised-button class="cta-button-accent" color="accent" (click)="navigateToAllProducts()">
+      View All Products
+    </button>
+  </div>
+</section>

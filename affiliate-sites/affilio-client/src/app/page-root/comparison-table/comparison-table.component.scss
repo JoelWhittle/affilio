@@ -1,0 +1,69 @@
+@import '../../../custom-theme.scss'; // Import the variables file
+
+.comparison-table {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background-color: $background;
+  flex-wrap: wrap;
+
+  .comparison-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: $background;
+    padding: 20px;
+    border: 1px solid $primary;
+    border-radius: 10px;
+    position: relative; // To position the tag absolutely within this container
+    box-sizing: border-box; // Include padding and border in width
+
+    .item-image {
+      max-width: 100%; // Ensure image doesn't overflow container
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .item-tag {
+      font-size: 0.9rem;
+      color: $text;
+      background-color: $primary;
+      padding: 5px 10px;
+      border-radius: 5px;
+      position: absolute; // Remove from the normal flow
+      top: 20px; // Position tag at the top of the item
+      left: 20px;
+      z-index: 1;
+      display: block;
+      font-family: 'Poppins', sans-serif;
+
+    }
+
+    .item-description {
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      color: $text-dark;
+    }
+
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  // Responsive styles for mobile view
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    .comparison-item {
+      width: 100%; // Ensure the item takes up full width on mobile
+      max-width: 100%; // Prevent overflowing beyond the container's width
+      margin-bottom: 20px; // Add spacing between stacked items
+      padding: 15px; // Adjust padding to fit better on smaller screens
+    }
+  }
+}

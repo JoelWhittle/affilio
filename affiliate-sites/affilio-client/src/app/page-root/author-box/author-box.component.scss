@@ -1,0 +1,93 @@
+@import '../../../custom-theme.scss'; // Import the variables file
+
+
+section{
+  background-color: $background;
+}
+.author-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background; // Custom theme variable
+  border: 1px solid $primary;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+
+  .author-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+    border: 2px solid $primary;
+  }
+
+
+
+  .author-details {
+    display: flex;
+    flex-direction: column;
+
+    .author-name {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: $primary;
+      text-align: center;
+
+    }
+
+    .author-bio {
+      margin: 8px 0;
+      font-size: 0.9rem;
+      color: $text-dark;
+      text-align: justify;
+    }
+
+    .author-links {
+      display: flex;
+      gap: 8px;
+
+      a {
+        color: $primary;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: darken($primary, 10%);
+        }
+
+        i {
+          display: inline-block;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+
+}
+
+.cta-div{
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .author-box {
+  width: 50%;
+   justify-self: center;
+   flex-direction: row;
+
+
+
+
+  }
+
+  .author-name {
+    text-align: left !important;
+      }
+      .cta-div{
+        text-align: left !important;
+      }
+}

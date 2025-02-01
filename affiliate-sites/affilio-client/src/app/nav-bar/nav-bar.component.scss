@@ -1,0 +1,119 @@
+@import '../../custom-theme.scss'; // Import your variables file
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;  // Set global font
+  margin: 0;  // Remove default margin
+}
+
+/* General toolbar styles */
+.mat-toolbar.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-variant;  // Lighter background for navbar
+  padding: 0 16px;  // Add horizontal padding
+  height: 64px;  // Toolbar height
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+  position: fixed;  // Fix the navbar to the top of the viewport
+  top: 0;  // Align to the top
+  left: 0;  // Align to the left
+  right: 0;  // Align to the right
+  z-index: 1000;  // Ensure it's above other elements
+}
+
+/* Logo Section */
+.navbar-logo img {
+  height: 40px;  // Fixed height for the logo
+  width: auto;
+}
+
+/* Brand Text Style */
+.nav-brand {
+  font-size: 24px;
+  font-weight: 700; /* Bold weight for emphasis */
+  color: $text-muted;  // Set the brand text color to the accent color for better contrast
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  letter-spacing: 1px;  // Slight spacing for elegance
+}
+
+/* Navbar Links (Desktop View) */
+.navbar-links {
+  display: flex;
+  gap: 20px;  // Space between the links
+  align-items: center;
+}
+
+.navbar-links a {
+  color: $accent;  // Set color for links (can adjust to primary or accent)
+  text-decoration: none;
+  font-weight: 500; /* Medium weight for links */
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;  // Rounded corners for better aesthetics
+  transition: color 0.3s ease, $primary 0.3s ease;  // Smooth transition for hover effect
+  font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+.navbar-links a:hover {
+  color: $background;  // Text color on hover (background color for contrast)
+  background-color: $secondary;  // Highlight background on hover
+}
+
+/* Hamburger Menu Button (Mobile View) */
+.navbar-menu {
+  color: $accent;  // Use the accent color for the menu icon
+  display: none;  // Hidden by default
+}
+
+/* Show the hamburger button only on small screens */
+@media screen and (max-width: 600px) {
+  .navbar-links {
+    display: none;  // Hide links on mobile
+  }
+
+  .navbar-links.show-nav {
+    display: flex;  // Show links when menu is toggled
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 64px;  // Below the toolbar
+    left: 0;
+    background-color: $primary-variant;  // Match the navbar background
+    padding-bottom: 20px;
+  }
+
+  .navbar-menu {
+    display: block;  // Show hamburger button on small screens
+  }
+}
+
+
+.overlay.show-overlay {
+  display: block;  // Show overlay when menu is toggled
+}
+
+.overlay {
+  display: none;  // Hidden by default
+}
+
+@media screen and (max-width: 600px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);  // Semi-transparent dark background
+    backdrop-filter: blur(2px);  // Blur effect
+    z-index: 999;  // Below the navbar but above other elements
+    opacity: 0;  // Initially hidden
+    transition: opacity 0.3s ease;  // Smooth transition for animation
+  }
+
+  .overlay.show-overlay {
+    display: block;  // Show overlay when menu is toggled
+    opacity: 1;  // Fully visible
+  }
+
+}

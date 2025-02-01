@@ -1,0 +1,33 @@
+<div class="hero-container">
+  <div class="hero-bg"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  >
+  </div>
+  <div class="hero-content">
+    <div *ngIf="lastModified" class="last-modified">Last Modified: {{lastModified | date}}</div>
+
+    <h1 class="hero-title">{{ title }}</h1>
+    <p class="hero-subheading">{{ subtitle }}</p>
+
+
+    <img  *ngIf="author" class="author-photo" src={{author.media.src}} alt=" May's photo" />
+
+    <div *ngIf="author" class="last-modified" style="margin-left: -15px;">By {{author.name}}</div>
+
+
+
+    <div class="cta-buttons">
+      <app-cta-button *ngFor="let cta of ctas"
+        [identifier]="'hero-1-' + cta.text"
+        [targetUrl]="cta.targetUrl"
+        [source]="componentId"
+        [text]="cta.text"
+        [accent]="cta.accent"
+        [variant]="cta.variant">
+      </app-cta-button>
+    </div>
+
+
+
+  </div>
+</div>

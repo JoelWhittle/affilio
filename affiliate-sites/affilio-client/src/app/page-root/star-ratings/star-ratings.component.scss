@@ -1,0 +1,31 @@
+@import '../../../custom-theme.scss'; // Import the variables file
+
+.star-ratings {
+  margin-bottom: 15px;
+  max-width: 250px;
+
+  .rating {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+
+    span {
+      font-weight: bold;
+      margin-right: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .stars {
+      display: flex;
+
+      .filled-star {
+        color: $primary;
+      }
+
+      .empty-star {
+        color: $primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import '../../../custom-theme.scss'; // Import the variables file
+
+.text-section {
+  padding: 20px;
+background-color: $background;
+  .paragraph-container {
+    margin-bottom: 20px;
+
+    .paragraph-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Default for mobile
+      text-align: justify;
+
+      .paragraph-text-wrapper {
+        margin-bottom: 10px;
+        text-align: justify;
+      }
+
+      .cta-buttons {
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        app-cta-button {
+          margin-right: 10px;
+        }
+      }
+
+      .paragraph-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; // Center vertically
+        margin-top: 10px;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+          margin-bottom: 5px;
+          object-fit: contain; // Ensure image scales without cropping
+        }
+
+        .image-caption {
+          font-size: 0.9rem;
+          color: $text-dark;
+          text-align: center;
+        }
+      }
+    }
+
+    // Styles for larger viewports
+    @media (min-width: 768px) {
+      .paragraph-content {
+        flex-direction: row;
+        align-items: center; // Center content vertically
+        justify-content: space-between;
+        gap: 20px;
+
+        .paragraph-text-wrapper {
+          flex: 1.2; // Allow text to take more space
+          margin-right: 20px;
+        }
+
+        .paragraph-image {
+          flex: 1; // Image takes less space
+          align-items: center;
+
+          img {
+            max-width: 100%; // Let the image scale to the available width
+            height: auto; // Maintain aspect ratio
+          }
+        }
+      }
+
+      // Reverse the order for image-right
+      .image-right {
+        flex-direction: row-reverse;
+
+        .paragraph-text-wrapper {
+          margin-right: 0;
+          margin-left: 20px;
+        }
+      }
+
+      .image-below {
+        flex-direction: column;
+        img {
+          max-width: 50% !important; // Let the image scale to the available width
+          height: auto; // Maintain aspect ratio
+        }
+
+      }
+    }
+  }
+}

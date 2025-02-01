@@ -1,0 +1,22 @@
+<div class="comparison-table">
+  <div class="comparison-item" *ngFor="let item of affiliateProducts; let i = index">
+    <img
+      class="item-image"
+      [src]="item.media?.[0]?.src"
+      [alt]="item.media?.[0]?.altText || 'Product Image'"
+    />
+    <span class="item-tag" *ngIf="metadata?.tags?.[i]">
+      {{ metadata.tags[i] }}
+    </span>
+    <p class="item-name">{{ item.name }}</p>
+    <p class="item-description">{{ item.description }}</p>
+
+    <app-star-ratings [starRatings]="item.metadata?.starRatings"></app-star-ratings>
+
+    <app-cta-button
+      [accent]="metadata?.cta?.accent ?? false"
+      [text]="metadata?.cta?.text || 'Learn More'"
+      [targetUrl]="item.affiliateUrl">
+    </app-cta-button>
+  </div>
+</div>

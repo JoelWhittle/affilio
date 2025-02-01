@@ -1,0 +1,107 @@
+@import '../../custom-theme.scss'; // Import the variables file
+
+/* Body and page container */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  // Ensure body takes full viewport height
+}
+p{
+  color: $text-muted;
+}
+.page-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; // Allow page container to take full height
+}
+
+.content {
+  flex-grow: 1; // Ensures content takes the available space and pushes footer down
+  padding: 20px;
+}
+
+.footer-container {
+  background-color: $primary; // Dark brown for footer (primary color)
+  padding: 20px 0;
+  font-family: 'Roboto', sans-serif;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 10px;
+
+    .footer-section {
+      flex: 1 1 200px;
+      margin: 10px;
+      text-align: center;
+
+      h3, h4 {
+        margin-bottom: 10px;
+        color: $text-muted; // Light orange accent for headers
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 5px 0;
+
+          a {
+            text-decoration: none;
+            color: $accent; // Soft orange for links
+            transition: color 0.3s;
+
+            &:hover {
+              color: $text; // White on hover
+            }
+          }
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .social-icon {
+        font-size: 24px;
+        cursor: pointer;
+        color: $accent; // Orange accent
+        transition: color 0.3s;
+
+        &:hover {
+          color: $text; // White on hover
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    background-color: $primary-variant; // Slightly lighter brown for separation
+    padding: 10px 0;
+
+    p {
+      margin: 0;
+      font-size: 12px;
+      color: $text-muted; // Muted gray
+    }
+  }
+}
+
+
+
+
+i.fab:hover {
+  opacity: 0.7; /* Hover effect */
+}

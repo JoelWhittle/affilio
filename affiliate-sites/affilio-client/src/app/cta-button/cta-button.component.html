@@ -1,0 +1,3 @@
+<button *ngIf="accent && !variant" mat-raised-button class="cta-button-accent" color="accent"  (click)="click()">{{text}}</button>
+<button *ngIf="!accent && !variant" mat-raised-button class="cta-button-primary" color="primary" (click)="click()">{{text}}</button>
+<button *ngIf="variant" mat-raised-button class="cta-button2" (click)="click()">{{text}}</button>

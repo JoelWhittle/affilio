@@ -1,0 +1,181 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Media {
+  id          String          @id @default(uuid()) @db.Uuid
+  src         String
+  mimeType    String
+  name        String
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  altText     String
+  caption     String
+  description String
+  metadata    Json?
+  components  PageComponent[] @relation("MediaToPageComponents") // Many-to-many
+  affiliateProducts  AffiliateProduct[] @relation("MediaToAffiliateProducts") // Many-to-many
+
+  Author   Author?
+  BlogPost BlogPost?
+
+}
+
+model User {
+  id        String   @id @default(uuid()) @db.Uuid
+  email     String   @unique
+  password  String
+  tenantId  String?  @db.Uuid
+  tenant    Tenant?  @relation("TenantUsers", fields: [tenantId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  ownedTenants             Tenant[]           @relation("TenantCreatedBy") // Relation field for tenants owned by the user
+  authors                  Author[]           @relation("UserAuthors") // Relation field for authorship
+  pagesCreated             Page[]             @relation("PageCreatedBy")
+  affiliateProductsCreated AffiliateProduct[] @relation("AffiliateProductCreatedBy")
+  blogPostsCreated         BlogPost[]         @relation("BlogPostCreatedBy")
+}
+
+model Tenant {
+  id            String   @id @default(uuid()) @db.Uuid
+  name          String
+  description   String
+  domain        String   @unique
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  createdBy     String   @db.Uuid
+  createdByUser User     @relation("TenantCreatedBy", fields: [createdBy], references: [id])
+
+  users             User[]             @relation("TenantUsers")
+  pages             Page[]             @relation("TenantPages")
+  authors           Author[]           @relation("TenantAuthors")
+  affiliateProducts AffiliateProduct[] @relation("TenantAffiliateProducts")
+  categories        Category[]         @relation("TenantCategories")
+  blogPosts         BlogPost[]         @relation("TenantBlogPosts")
+
+  apiKey   String @unique
+  metadata Json? // Stores metadata as a JSON object
+}
+
+model Page {
+  id              String          @id @default(uuid()) @db.Uuid
+  tenantId        String          @db.Uuid
+  tenant          Tenant          @relation("TenantPages", fields: [tenantId], references: [id])
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  createdBy       String          @db.Uuid
+  createdByUser   User            @relation("PageCreatedBy", fields: [createdBy], references: [id])
+  metadata        Json?
+  published       Boolean
+  seoTitle        String? // SEO-friendly title
+  seoDescription  String? // Meta description for search engines
+  seoKeywords     String[] // Array of relevant keywords
+  slug            String? // URL-friendly identifier
+  version         Int             @default(1) // Tracks version of the page
+  previousVersion String?         @db.Uuid // Reference to the previous version
+  blogPosts       BlogPost[]      @relation("PageBlogPosts")
+  components      PageComponent[] @relation("PageComponents")
+}
+
+model PageComponent {
+  id        String             @id @default(uuid()) @db.Uuid
+  type      String
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+  text      String?
+  media     Media[]            @relation("MediaToPageComponents") // Many-to-many
+  affiliateProducts  AffiliateProduct[]  @relation("PageComponentsToAffiliateProducts") // Many-to-many
+  metadata  Json?
+  pageId    String             @db.Uuid
+  page      Page               @relation("PageComponents", fields: [pageId], references: [id])
+  order     Int                @default(1)
+}
+
+model Author {
+  id          String     @id @default(uuid()) @db.Uuid
+  tenantId    String     @db.Uuid
+  tenant      Tenant     @relation("TenantAuthors", fields: [tenantId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  userId      String     @db.Uuid
+  user        User       @relation("UserAuthors", fields: [userId], references: [id])
+  name        String
+  image       String
+  description String
+  facebook    String
+  twitter     String
+  instagram   String
+  website     String
+  blogPosts   BlogPost[] @relation("AuthorBlogPosts")
+
+  media   Media  @relation(fields: [mediaId], references: [id]) // Required media
+  mediaId String @unique @db.Uuid
+}
+
+model AffiliateProduct {
+  id              String         @id @default(uuid()) @db.Uuid
+  tenantId        String         @db.Uuid
+  tenant          Tenant         @relation("TenantAffiliateProducts", fields: [tenantId], references: [id])
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  createdBy       String         @db.Uuid
+  createdByUser   User           @relation("AffiliateProductCreatedBy", fields: [createdBy], references: [id])
+  name            String
+  media           Media[]            @relation("MediaToAffiliateProducts") // Many-to-many
+  description     String
+  price           Decimal?
+  affiliateUrl    String
+  categories      Category[]     @relation("AffiliateProductCategories")
+  blogPosts       BlogPost[]     @relation("AffiliateProductBlogPosts")
+  pageComponents           PageComponent[]            @relation("PageComponentsToAffiliateProducts") // Many-to-many
+  metadata Json? // Stores metadata as a JSON object
+
+}
+
+model Category {
+  id                String             @id @default(uuid()) @db.Uuid
+  tenantId          String             @db.Uuid
+  tenant            Tenant             @relation("TenantCategories", fields: [tenantId], references: [id])
+  name              String
+  categoryType      CategoryType
+  affiliateProducts AffiliateProduct[] @relation("AffiliateProductCategories")
+  blogPosts         BlogPost[]         @relation("BlogPostCategories")
+}
+
+model BlogPost {
+  id                String             @id @default(uuid()) @db.Uuid
+  tenantId          String             @db.Uuid
+  tenant            Tenant             @relation("TenantBlogPosts", fields: [tenantId], references: [id])
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  createdBy         String             @db.Uuid
+  createdByUser     User               @relation("BlogPostCreatedBy", fields: [createdBy], references: [id])
+  name              String
+  enabled           Boolean
+  authorId          String             @db.Uuid
+  author            Author             @relation("AuthorBlogPosts", fields: [authorId], references: [id])
+  pageId            String?            @db.Uuid
+  page              Page?              @relation("PageBlogPosts", fields: [pageId], references: [id])
+  affiliateProducts AffiliateProduct[] @relation("AffiliateProductBlogPosts")
+  categories        Category[]         @relation("BlogPostCategories")
+
+  media   Media  @relation(fields: [mediaId], references: [id]) // Required media
+  mediaId String @unique @db.Uuid
+}
+
+enum CategoryType {
+  AffiliateProduct
+  BlogPost
+}

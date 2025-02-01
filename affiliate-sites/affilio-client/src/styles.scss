@@ -1,0 +1,134 @@
+@import './custom-theme.scss'; // Import the variables file
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+body{
+  background-color: $background;
+}
+
+.cta-button-primary {
+  background-color: $primary !important ;  /* Accent color (Carrot orange) */
+  color: $text !important;
+  font-size: 1.1rem !important;
+  padding: 12px 30px;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif !important; /* Use Poppins font */
+  font-weight: 500 !important; /* Medium weight for links */
+  font-size: 16px !important;
+  border-radius: 10px!important;
+}
+
+
+.cta-button-primary:hover {
+  background-color: $primary-variant !important;  /* Darker shade on hover */
+}
+
+
+.cta-button-accent {
+  background-color: $accent ;  /* Accent color (Carrot orange) */
+  color:$text-dark !important;
+  font-size: 1.1rem !important;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif !important; /* Use Poppins font */
+  font-weight: 500 !important; /* Medium weight for links */
+  font-size: 16px !important;
+  border-radius: 10px!important;
+
+}
+
+
+.cta-button-accent:hover {
+  background-color: $secondary !important;  /* Darker shade on hover */
+}
+
+.cta-button2 {
+  background-color: rgba($accent, 0.2) !important; /* Semi-transparent accent color */
+  color: rgba($accent, 1) !important; /* Text color for readability */
+  font-size: 1.1rem !important;
+  border: 2px solid $accent !important; /* Accent-colored border */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif !important; /* Use Poppins font */
+  font-weight: 500 !important; /* Medium weight for links */
+  font-size: 16px !important;
+  border-radius: 10px!important;
+
+}
+
+.cta-button2:hover {
+  background-color: $secondary !important; /* Full accent color on hover */
+  color:$text-dark !important;  /* Contrast text color on hover */
+  border-color: $secondary !important; /* Optional: darker border shade on hover */
+}
+
+section {
+  padding: 80px 20px;
+}
+
+
+h2 {
+  font-size: 2.5rem;
+  color: $primary;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+
+.section-intro-text {
+  font-size: 1.2rem;
+  color: $text-dark;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+h3 {
+  font-size: 1.5rem;
+  color: $primary;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 1rem;
+  color: $text-dark;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.last-modified {
+  font-size: 0.8rem;
+  color: $text-dark;
+  margin-top: 10px;
+  display: block;
+}
+
+
+mat-card-header {
+  background-color: $background-dark-variant;
+  color: $primary;
+}
+
+
+mat-card-title {
+  font-size: 1.5rem !important;
+  color: $primary !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+mat-card-subtitle {
+  font-size: 0.9rem !important;
+  color:$text-dark !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+mat-card-content {
+  font-size: 1rem !important;
+  color: $text-dark;
+}
+

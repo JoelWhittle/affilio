@@ -1,0 +1,26 @@
+@import '../../custom-theme.scss'; // Import the variables file
+
+.not-found {
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    color: $primary;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: $primary;
+  }
+
+  .home-link {
+    font-size: 1.2rem;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

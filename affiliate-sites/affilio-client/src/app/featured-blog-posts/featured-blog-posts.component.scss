@@ -1,0 +1,50 @@
+@import '../../custom-theme.scss'; // Import the variables file
+.featured-blog-posts {
+
+
+  .blog-grid {
+    display: grid;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  .blog-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: $background-dark-variant;
+
+    mat-card-actions {
+      display: flex;
+      justify-content: flex-end;
+
+
+    }
+
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  .read-all {
+    margin-top: 30px;
+    text-align: center;
+
+
+  }
+}

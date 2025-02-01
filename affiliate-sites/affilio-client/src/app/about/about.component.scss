@@ -1,0 +1,83 @@
+@import '../../custom-theme.scss'; // Import your Material theme
+
+.about-us {
+  text-align: center;
+  background-color: $background-light-variant;
+padding: 0px 0px;
+  .hero-section {
+
+background-color: $background-light-variant ;
+padding: 0px;
+  }
+
+  .story{
+    background-color: $background;
+  }
+
+  .about-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 1000px;
+    background: $background-dark-variant;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .image-container {
+      flex: 1;
+      max-width: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    .content-container {
+      flex: 1;
+      padding: 20px;
+
+    }
+  }
+
+  .newsletter{
+    background-color: $background-dark-variant;
+  }
+  .cta-section {
+    background-color: $background-light-variant;
+
+
+
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-card {
+      flex-direction: column;
+
+      &.reverse {
+        flex-direction: column;
+      }
+
+      .image-container,
+      .content-container {
+        max-width: 100%;
+      }
+    }
+  }
+}

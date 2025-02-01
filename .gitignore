@@ -1,0 +1,40 @@
+# Ignore node_modules for both projects
+**/node_modules
+
+# Ignore build outputs for Angular project
+affiliate-sites/affilio-client/dist
+affiliate-sites/affilio-client/out-tsc
+
+# Ignore environment files for Angular project
+affiliate-sites/affilio-client/src/environments/environment*.ts
+
+# Ignore build outputs for NestJS project
+backend/affilio/dist
+backend/affilio/node_modules
+
+# Ignore logs
+**/logs
+**/*.log
+
+# Ignore temporary files
+**/tmp
+**/temp
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+# Ignore environment variable files
+.env
+backend/affilio/.env
+
+# Ignore Angular cache files
+**/.angular
+affiliate-sites/affilio-client/.angular
+
+
+# Ignore node_modules for both projects
+affiliate-sites/affilio-client/src/assets

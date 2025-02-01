@@ -1,0 +1,10 @@
+<div class="star-ratings">
+  <div class="rating" *ngFor="let rating of getRatings(starRatings)">
+    <span>{{ rating.key }}</span>
+    <div class="stars">
+      <mat-icon *ngFor="let star of [].constructor(rating.value)" class="filled-star">star</mat-icon>
+      <mat-icon *ngFor="let star of [].constructor(5 - rating.value)" class="empty-star">star_border</mat-icon>
+
+    </div>
+  </div>
+</div>

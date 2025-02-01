@@ -1,0 +1,21 @@
+
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Install ts-node-dev for hot reloading and Prisma
+RUN npm install --save-dev ts-node-dev prisma class-validator bcryptjs uuid
+
+# Copy the rest of the application
+COPY . .
+
+# Expose port for the application
+EXPOSE 3000
+
+# Run Prisma migrations and generate the Prisma client during container startup
+CMD ["sh", "-c", "/wait-db.sh && npx prisma migrate deploy && npx prisma generate && npm run dev"]

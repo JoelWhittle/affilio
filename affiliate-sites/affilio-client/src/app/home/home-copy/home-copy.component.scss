@@ -1,0 +1,29 @@
+@import '../../../custom-theme.scss';
+
+.rabbit-joy-section {
+  background-color: $background-light-variant;
+  text-align: center;
+
+
+  .content-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .content-card {
+      background-color: $background-dark-variant;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: left;
+
+    }
+  }
+
+  .cta-container {
+    margin-top: 30px;
+
+  }
+}

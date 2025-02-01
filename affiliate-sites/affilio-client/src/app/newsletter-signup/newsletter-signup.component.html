@@ -1,0 +1,39 @@
+<section class="newsletter-signup">
+  <h2 class="newsletter-header">{{title}}</h2>
+
+  <p class="section-intro-text">
+    {{subtitle}}
+  </p>
+
+  <form #newsletterForm="ngForm" (ngSubmit)="subscribeToNewsletter()">
+    <div class="form-group">
+      <label for="email" class="email-label">Email Address</label>
+      <input
+        id="email"
+        matInput
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        #emailControl="ngModel"
+        required
+        email
+        class="email-input">
+
+      <mat-error *ngIf="emailControl.invalid && emailControl.touched">
+        Please enter a valid email address.
+      </mat-error>
+    </div>
+
+    <div *ngIf="isInvalidEmail" class="error-message">
+      Invalid email. Please provide a valid email address.
+    </div>
+
+    <div *ngIf="isSubmitted" class="success-message">
+      Thank you for subscribing!
+    </div>
+
+    <div class="button-container">
+      <button mat-raised-button class="cta-button-accent" color="accent"  [disabled]="newsletterForm.invalid">Subscribe</button>
+    </div>
+  </form>
+</section>

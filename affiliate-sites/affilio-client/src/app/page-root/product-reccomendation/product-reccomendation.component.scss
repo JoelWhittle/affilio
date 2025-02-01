@@ -1,0 +1,114 @@
+
+@import '../../../custom-theme.scss'; // Import the variables file
+
+.product-reccomendation {
+  background-color: $background;
+  // Text justification for all paragraph text within this section
+  .paragraph-text {
+    text-align: justify;
+  }
+
+
+
+  img {
+    width: 100%; // Ensures the image fits the screen width
+    border-radius: 10px;
+  }
+
+  .test{
+    flex-direction: column; // Stacks elements vertically on smaller screens
+    flex-wrap: wrap; // Ensures content wraps properly on small screens
+
+  }
+
+
+
+
+  .pros-card, .cons-card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 48%;
+    transition: transform 0.3s ease;
+  }
+
+  .pros-card h3, .cons-card h3 {
+    font-size: 1.5rem;
+    color: $primary;
+    margin-bottom: 10px;
+  }
+
+  .pros-card ul, .cons-card ul {
+    list-style-type: none;
+    padding-left: 0;
+    color: $primary;
+  }
+
+  .pros-card li, .cons-card li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+
+
+
+  .pros-cons-cards {
+    flex-direction: column;
+    width: 100%;
+
+  }
+
+  .pros-card, .cons-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  // Responsive design for mobile-first
+  @media (min-width: 768px) {
+    .pros-cons {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 40px;
+      flex-direction: row;
+    }
+    .pros-cons-cards {
+      display: flex;
+      gap: 40px;
+      width: 100%;
+      flex-direction: row;
+
+    }
+
+    .pros-card {
+    }
+
+    .cons-card {
+    }
+
+    // Flexbox for content layout
+  .test{
+    display: flex;
+    flex-wrap: nowrap; // Ensures content wraps properly on small screens
+
+  }
+
+  .left{
+    flex-direction: row; // Stacks elements vertically on smaller screens
+
+  }
+
+  .right{
+    flex-direction: row-reverse; // Stacks elements vertically on smaller screens
+
+  }
+
+  // Styling for the image to prevent it from spilling over
+  img {
+    max-width: 100%; // Scales image to fit container
+    height: auto;    // Maintains aspect ratio
+    display: block;  // Ensures no extra whitespace
+    margin: 0 auto;  // Centers the image
+  }
+  }
+}

@@ -1,0 +1,31 @@
+<section class="rabbit-joy-section">
+  <h2>{{metadata.title}}</h2>
+  <p class="section-intro-text">
+    {{metadata.text}}
+  </p>
+
+  <div class="content-grid">
+    <div class="content-card" *ngFor="let card of metadata.cards">
+      <h3>{{card.title}}</h3>
+      <p>
+        {{card.text}}
+      </p>
+    </div>
+
+
+  </div>
+
+  <div class="cta-container">
+    <app-cta-button *ngFor="let cta of metadata.ctas"
+    [identifier]="'hero-1-' + cta.text"
+    [targetUrl]="cta.targetUrl"
+    [source]="componentId"
+    [text]="cta.text"
+    [accent]="cta.accent"
+    [variant]="cta.variant">
+  </app-cta-button>
+
+  </div>
+</section>
+
+

@@ -1,0 +1,20 @@
+# Use a Node.js image
+FROM node:16-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Install the necessary dependencies
+COPY package*.json ./
+
+# Ignore optional dependencies during installation
+RUN npm install --no-optional
+
+# Copy the Angular project files into the container
+COPY . .
+
+# Expose the port that Angular will run on (default is 4200)
+EXPOSE 4200
+
+# Run Angular's development server when the container starts
+CMD ["npm", "start"]
