@@ -10,8 +10,8 @@ services:
     container_name: affilio-frontend 
     ports:
       - "80:80"  
-    # env_file:
-    #   - .env   
+   # env_file:
+   #   - .env   
     restart: unless-stopped
 
   app:
@@ -61,7 +61,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
     restart: unless-stopped
