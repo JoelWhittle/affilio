@@ -4,9 +4,14 @@ services:
   frontend:
     build:
       context: ./affiliate-sites/affilio-client
+      args:
+        API_KEY: ${API_KEY}
+        API_BASE_URL: ${API_BASE_URL}
     container_name: affilio-frontend 
     ports:
       - "80:80"  
+    env_file:
+      - .env   
     restart: unless-stopped
 
   app:
