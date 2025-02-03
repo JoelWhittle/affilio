@@ -64,7 +64,8 @@ section {
   padding: 80px 20px;
 }
 
-
+article {
+}
 h2 {
   font-size: 2.5rem;
   color: $primary;
@@ -82,9 +83,21 @@ h2 {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: justify;
+  hyphens: auto;   /* Enable hyphenation */
 }
 
-
+.article-intro-text {
+  font-size: 1.2rem;
+  color: $text-dark;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  hyphens: auto;   /* Enable hyphenation */
+}
 
 h3 {
   font-size: 1.5rem;
@@ -109,6 +122,32 @@ p {
 }
 
 
+
+
+.content-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 auto;
+  padding: 0 0px;
+
+  .content-card {
+    background-color: $background-dark-variant;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+}
+
 mat-card-header {
   background-color: $background-dark-variant;
   color: $primary;
@@ -132,3 +171,39 @@ mat-card-content {
   color: $text-dark;
 }
 
+
+
+
+
+@media (min-width: 768px) {
+
+
+.content-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .content-card {
+    background-color: $background-dark-variant;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;   /* Enable hyphenation */
+  }
+
+}
+
+}
+
+@media (min-width: 1024px) {
+
+}

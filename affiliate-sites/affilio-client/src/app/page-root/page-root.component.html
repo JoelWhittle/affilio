@@ -1,7 +1,6 @@
 
-<div *ngIf="v2">
 
-  <div *ngIf="pageContent">
+  <article *ngIf="pageContent">
 
     <div *ngFor="let component of pageContent.components">
 
@@ -76,4 +75,4 @@
   <app-author-box *ngIf="pageContent.blogPost?.author"
   [item]="pageContent.blogPost?.author"></app-author-box>
 
-  </div>
+  </article>

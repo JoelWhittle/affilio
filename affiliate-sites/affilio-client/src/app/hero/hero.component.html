@@ -5,13 +5,14 @@
   </div>
   <div class="hero-content">
     <div *ngIf="lastModified" class="last-modified">Last Modified: {{lastModified | date}}</div>
-    <h1 class="hero-title">{{ title }}</h1>
-    <p class="hero-subheading">{{ subtitle }}</p>
-
-    <img  *ngIf="author" class="author-photo" src={{author.media.src}} alt=" May's photo" />
-
-    <div *ngIf="author" class="last-modified" style="margin-left: -15px;">By {{author.name}}</div>
-
+    <header>
+      <h1 class="hero-title">{{ title }}</h1>
+      <p class="hero-subheading">{{ subtitle }}</p>
+    </header>
+    <figure *ngIf="author" class="author-photo-container">
+      <img class="author-photo" src={{author.media.src}} alt={{author.media.alt}} />
+      <figcaption class="last-modified" style="margin-left: -15px;">By {{author.name}}</figcaption>
+    </figure>
     <div class="cta-buttons">
       <app-cta-button *ngFor="let cta of ctas"
         [identifier]="'hero-1-' + cta.text"
@@ -22,6 +23,5 @@
         [variant]="cta.variant">
       </app-cta-button>
     </div>
-
   </div>
 </div>
