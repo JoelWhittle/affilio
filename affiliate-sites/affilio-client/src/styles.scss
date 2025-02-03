@@ -2,6 +2,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
 
+mat-card-header {
+  background-color: $background-dark-variant;
+  color: $primary;
+  padding: 0 0px !important;
+}
+
+
+mat-card-title {
+  font-size: 1.5rem !important;
+  color: $primary !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+mat-card-subtitle {
+  font-size: 0.9rem !important;
+  color:$text-dark !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+mat-card-content {
+  font-size: 1rem !important;
+  color: $text-dark;
+  padding: 0 0px !important;
+}
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-card {
+  // padding-left: 0px !important;
+  // padding-right: 0px !important;
+}
+
 body{
   background-color: $background;
 }
@@ -64,8 +98,7 @@ section {
   padding: 80px 20px;
 }
 
-article {
-}
+
 h2 {
   font-size: 2.5rem;
   color: $primary;
@@ -123,52 +156,68 @@ p {
 
 
 
+.read-all {
+  margin-top: 24px;
+  text-align: center;
+}
+
+
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+
+.no-wrap {
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
 
 .content-grid {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   margin: 0 auto;
   padding: 0 0px;
 
   .content-card {
     background-color: $background-dark-variant;
     padding: 20px;
+
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left;
-
-
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; // Keep it centered and readable on mobile
+    max-width: 500px; // Prevents it from becoming too wide on tablets
   }
+
+
+
+  .card-img {
+    height: auto;
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+
+
 
   p {
     text-align: justify;
     hyphens: auto;
   }
 
-}
-
-mat-card-header {
-  background-color: $background-dark-variant;
-  color: $primary;
-}
-
-
-mat-card-title {
-  font-size: 1.5rem !important;
-  color: $primary !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-mat-card-subtitle {
-  font-size: 0.9rem !important;
-  color:$text-dark !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-mat-card-content {
-  font-size: 1rem !important;
-  color: $text-dark;
 }
 
 
@@ -191,14 +240,10 @@ mat-card-content {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left;
-
-
+    max-width: none;
   }
 
-  p {
-    text-align: justify;
-    hyphens: auto;   /* Enable hyphenation */
-  }
+
 
 }
 
