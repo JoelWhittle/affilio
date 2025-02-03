@@ -1,11 +1,13 @@
-@import '../../custom-theme.scss'; // Import the variables file
+@import '../../custom-theme.scss';
+
 .hero-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;  /* Adjust height as needed */
+  height: 500px;
   position: relative;
   overflow: hidden;
+  padding: 16px;
 }
 
 .hero-bg {
@@ -26,35 +28,57 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity for desired dimness */
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
 .hero-content {
   text-align: center;
   color: $text;
-  z-index: 2;  /* Ensure the text stays above the background */
+  z-index: 2;
   padding: 20px;
   max-width: 80%;
-  background: rgba(0, 0, 0, 0.0); /* Dark overlay for text readability */
+  background: rgba(0, 0, 0, 0.0);
   border-radius: 10px;
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 15px;
   font-family: 'Poppins', sans-serif;
 }
 
 .hero-subheading {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
   color: $text;
 }
 
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
 
+  .hero-subheading {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-subheading {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+}
 
 .highlighted-post p {
   font-size: 1.1rem;
@@ -62,18 +86,17 @@
 }
 
 .highlighted-post a {
-  color: $accent;  /* Bright yellow accent for the link */
+  color: $accent;
   font-weight: bold;
 }
 
 .highlighted-post a:hover {
-  color: $secondary;  /* Change to accent color on hover */
+  color: $secondary;
 }
 
-.last-modified{
+.last-modified {
   color: $text-muted;
 }
-
 
 .author-photo {
   width: 60px;
@@ -84,14 +107,13 @@
   border: 2px solid $primary;
 }
 
-
 .cta-buttons {
-  display: flex; /* Use flexbox for alignment */
-  flex-wrap: wrap; /* Allow wrapping if there are many buttons */
-  gap: 5px; /* Adds consistent spacing between buttons */
-  justify-content: center; /* Align buttons horizontally (optional) */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
 }
 
 app-cta-button {
-  margin: 5px; /* Adds space around individual buttons */
+  margin: 5px;
 }
