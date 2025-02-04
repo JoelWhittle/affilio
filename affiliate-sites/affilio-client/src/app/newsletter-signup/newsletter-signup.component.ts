@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 export class NewsletterSignupComponent {
 
 @Input() title: string = 'Subscribe to Our Newsletter';
-  @Input() subtitle: string = 'Stay up to date with the latest blog posts, featured products, and all things rabbit-related! Don\'t miss out on exclusive offers and updates. Sign up below to receive our newsletter directly in your inbox.';
+  @Input() subtitle: string = 'Stay up to date with the latest blog posts, featured products';
 
   email: string = ''; // Explicitly typed as a string
   isSubmitted: boolean = false;
