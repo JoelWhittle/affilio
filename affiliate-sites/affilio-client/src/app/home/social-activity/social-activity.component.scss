@@ -8,12 +8,12 @@
     height: 24px;
     margin-right: 0px;
     vertical-align: middle;
-    justify-content: center;/* Fixes the vertical alignment of the icon */
+    justify-content: center;
     padding-top: 10px;
   }
   .social-post-header {
     display: flex;
-    align-items: center; /* Ensures vertical alignment */
+    align-items: center;
     padding: 0px;
     padding-top: 0px;
     background-color: $background-dark-variant;
