@@ -1,27 +1,31 @@
-
 <section>
-<div class="author-box" >
-
-  <img class="author-photo" [src]="item.media.src" alt="{{item.media.alt}}" />
-  <div>
-  <div class="author-details">
-    <h3 class="author-name">{{item.name}}</h3>
-    <p class="author-bio"> {{item.description}}</p>
-    <!-- <div class="author-links">
-      <a *ngFor="let link of item.links" [href]="link.url" target="_blank" rel="noopener">
-        <i class="{{ link.icon }}"></i>
-      </a>
-    </div> -->
-    <div class="cta-div">
-    <app-cta-button
-    [identifier]="'author-box-TODO'"
-    [targetUrl]="''"
-    [source]="item.id"
-    [text]="'Read More'"
-   >
-  </app-cta-button>
-    </div>
+  <div class="content-grid">
+    <mat-card class="content-card">
+      <div class="content-wrapper">
+        <div class="img-container">
+          <img class="author-photo" [src]="item.media.src" alt="{{item.media.alt}}" />
+        </div>
+        <div>
+          <div class="author-details">
+            <h3 class="author-name">{{item.name}}</h3>
+            <p class="author-bio">{{item.description}}</p>
+            <!-- <div class="author-links">
+              <a *ngFor="let link of item.links" [href]="link.url" target="_blank" rel="noopener">
+                <i class="{{ link.icon }}"></i>
+              </a>
+            </div> -->
+            <div class="cta-div">
+              <app-cta-button
+                [identifier]="'author-box-TODO'"
+                [targetUrl]="''"
+                [source]="item.id"
+                [text]="'Read More'"
+              >
+              </app-cta-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
   </div>
-</div>
-</div>
 </section>
