@@ -2,7 +2,7 @@
 
   <h2 class="title-wrapper">{{ metadata.title }}</h2>
 
-  <div *ngFor="let paragraph of metadata.paragraphs" class="paragraph-container" [ngClass]="'image-' + (paragraph.image?.imagePosition || 'default')">
+  <div *ngFor="let paragraph of metadata.paragraphs" class="paragraph-container" [ngClass]="'image-' + (paragraph.image?.imagePosition || 'default')" style="margin-bottom: 0px;">
     <div class="paragraph-content">
       <!-- Image Block (Conditionally Rendered Above, Left, Right, Below) -->
       <div class="paragraph-image" *ngIf="paragraph.image">
@@ -13,7 +13,7 @@
       </div>
 
       <!-- Text Content -->
-      <div class="paragraph-text-wrapper">
+      <div class="paragraph-text-wrapper" style="margin-bottom: 0px;">
         <div class="paragraph-text" [innerHTML]="sanitizeHtml(paragraph.text)"></div>
 
         <div class="cta-buttons" *ngIf="paragraph.ctas?.length">
