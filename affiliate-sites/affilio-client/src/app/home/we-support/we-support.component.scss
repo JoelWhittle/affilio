@@ -7,40 +7,34 @@
 
 
 
-  .support-grid {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-content: center;
-    align-items: start;
-    margin: 0 auto;
+  .support-logo {
+    height: 128px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    border-radius: 360px;
   }
-
-  .support-item {
-    background-color: $background-dark-variant;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s;
-
-
-    .support-logo {
-      height: 128px;
-      margin-bottom: 15px;
-      object-fit: contain;
-      border-radius: 360px;
-    }
-    .content-card {
-      max-width: none;
-    }
+  .content-card {
+    max-width: none;
+  }
 
 
 
 h3 {
-  text-align: center;
+text-align: center;
 }
 
+p{
+  text-align: center;
+  hyphens: auto;
+}
 
-  }
+mat-card-actions{
+  text-align: center;
+  justify-content: center;
+}
+
+}
+
+h2{
+  text-align: center;
 }

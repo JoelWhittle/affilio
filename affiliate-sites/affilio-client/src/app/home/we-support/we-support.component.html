@@ -3,14 +3,56 @@
   <p class="section-intro-text">
     {{metadata.text}}
   </p>
-  <div class="support-grid">
-    <div *ngFor="let support of supportItems" class="support-item">
-      <img [src]="support.logo" [alt]="support.name" class="support-logo" />
-      <h3>{{ support.name }}</h3>
-      <p>{{ support.description }}</p>
-      <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToSupport(support.link)">
-        Learn More
-      </button>
+
+  <div class="content-grid" [style.grid-template-columns]="gridCols">
+    <div *ngFor="let support of supportItems" class="grid-item">
+      <mat-card class="content-card">
+        <img [src]="support.logo" [alt]="support.name" class="support-logo" />
+        <h3>{{ support.name }}</h3>
+        <p>{{ support.description }}</p>
+
+        <mat-card-actions>
+
+        <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToSupport(support.link)">
+          Learn More
+        </button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
 </section>
+
+
+
+<!-- <section class="social-activity">
+  <h2>Social Activity</h2>
+  <div class="content-grid" [style.grid-template-columns]="gridCols">
+    <div *ngFor="let post of socialPosts" class="grid-item">
+      <mat-card class="content-card">
+        <div class="social-post-header">
+          <i class="platform-icon"  [class]="getPlatformIcon(post.link)" aria-hidden="true"></i>
+          <span class="platform-name">{{ getPlatformName(post.link) }}</span>
+        </div>
+        <mat-card-header>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+        </mat-card-header>
+        <img  class="card-img" mat-card-image [src]="post.thumbnail" alt="{{ post.title }}">
+        <mat-card-content>
+          <p class="no-wrap">{{ post.excerpt }}</p>
+          <small class="last-modified">Last Modified: {{ post.date | date: 'mediumDate' }}</small>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToPost(post.link)">
+            Read More
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="read-all">
+    <button mat-raised-button  class="cta-button-accent" color="accent">
+      View all Social Activity
+    </button>
+
+  </div>
+</section> -->
