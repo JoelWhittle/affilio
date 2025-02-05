@@ -3,11 +3,12 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { StarRatingsComponent } from "../star-ratings/star-ratings.component";
 import { CtaButtonComponent } from '../../cta-button/cta-button.component';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-product-reccomendation',
   standalone: true,
-  imports: [StarRatingsComponent, CtaButtonComponent, CommonModule],
+  imports: [StarRatingsComponent, CtaButtonComponent, CommonModule, MatCardModule],
   templateUrl: './product-reccomendation.component.html',
   styleUrl: './product-reccomendation.component.scss'
 })

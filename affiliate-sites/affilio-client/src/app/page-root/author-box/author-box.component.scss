@@ -71,6 +71,17 @@ section {
   text-align: center;
 }
 
+
+
+
+
+
+  .content-card {
+    max-width: none;
+  }
+
+
+
 @media (min-width: 768px) {
   .content-wrapper {
     flex-direction: row;

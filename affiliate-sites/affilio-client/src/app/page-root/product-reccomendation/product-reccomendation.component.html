@@ -1,73 +1,67 @@
-<section class="product-reccomendation" >
+<section class="product-reccomendation">
+  <div class="product-reccomendation-wrapper">
   <h2 *ngIf="isFinal">Final Reccomendation</h2>
-
   <h2 *ngIf="!isFinal">{{affiliateProduct?.name}}</h2>
-<div style="display: flex; gap:40px" *ngIf="metadata.left == true" class="test left">
 
-
-  <div style="width: 100%;">
-    <h3>{{metadata.tag}}</h3>
-
-    <div class="paragraph-text" [innerHTML]="sanitizeHtml(metadata.textFirst)"></div>
-    <app-star-ratings [starRatings]="affiliateProduct?.metadata.starRatings"></app-star-ratings>
-    <app-cta-button
-[targetUrl]="affiliateProduct?.affiliateUrl"
-[text]="metadata.cta.text"
-[accent]="metadata.cta.accent"
->
-{{ metadata.cta.text }}
-</app-cta-button>
+  <div style="display: flex; gap: 40px" *ngIf="metadata.left" class="reccomendation-wrapper left">
+    <div style="width: 100%;">
+      <h3>{{metadata.tag}}</h3>
+      <div class="paragraph-text" [innerHTML]="sanitizeHtml(metadata.textFirst)"></div>
+      <app-star-ratings [starRatings]="affiliateProduct?.metadata.starRatings"></app-star-ratings>
+      <app-cta-button
+        [targetUrl]="affiliateProduct?.affiliateUrl"
+        [text]="metadata.cta.text"
+        [accent]="metadata.cta.accent"
+      >
+        {{ metadata.cta.text }}
+      </app-cta-button>
+    </div>
+    <div style="width: 100%;">
+      <img src="{{affiliateProduct.media[0].src}}" alt="Product Image">
+    </div>
   </div>
-  <div style="width: 100%; ">
-    <img src="{{affiliateProduct.media[0].src}}">
+
+  <div style="display: flex; gap: 40px" *ngIf="!metadata.left" class="reccomendation-wrapper right">
+    <div style="width: 100%;">
+      <h3>{{metadata.tag}}</h3>
+      <div class="paragraph-text" [innerHTML]="sanitizeHtml(metadata.textFirst)"></div>
+      <app-star-ratings [starRatings]="affiliateProduct?.metadata.starRatings"></app-star-ratings>
+      <app-cta-button
+        [targetUrl]="affiliateProduct?.affiliateUrl"
+        [text]="metadata.cta.text"
+        [accent]="metadata.cta.accent"
+      >
+        {{ metadata.cta.text }}
+      </app-cta-button>
+    </div>
+    <div style="width: 100%;">
+      <img src="{{affiliateProduct.media[0].src}}" alt="Product Image">
+    </div>
   </div>
+
+  <div class="paragraph-text" *ngIf="metadata.textSecond" [innerHTML]="sanitizeHtml(metadata.textSecond)"></div>
+
 </div>
 
-
-
-
-<div style="display: flex; gap:40px" *ngIf="metadata.left == false" class="test right">
-  <div style="width: 100%;">
-
-    <h3>{{metadata.tag}}</h3>
-
-    <div class="paragraph-text" [innerHTML]="sanitizeHtml(metadata.textFirst)"></div>
-    <app-star-ratings [starRatings]="affiliateProduct?.metadata.starRatings"></app-star-ratings>
-    <app-cta-button
-[targetUrl]="affiliateProduct?.affiliateUrl"
-[text]="metadata.cta.text"
-[accent]="metadata.cta.accent"
->
-{{ metadata.cta.text }}
-</app-cta-button>
-  </div>
-  <div style="width: 100%; ">
-    <img src="{{affiliateProduct.media[0].src}}">
-  </div>
+<div class="content-grid" *ngIf="!isFinal && affiliateProduct?.metadata?.pros && affiliateProduct?.metadata?.cons">
+  <div class="grid-item">
+<mat-card class="content-card">
+  <h3>Pros</h3>
+  <ul>
+    <li *ngFor="let pro of affiliateProduct?.metadata?.pros">{{pro}}</li>
+  </ul>
+</mat-card>
 </div>
 
-
-<div class="paragraph-text" *ngIf="metadata.textSecond" [innerHTML]="sanitizeHtml(metadata.textSecond)"></div>
-
-
-
-<div class="pros-cons-cards" *ngIf="!isFinal && affiliateProduct?.metadata?.pros && affiliateProduct?.metadata?.cons">
-  <!-- Pros Card -->
-  <div class="pros-card">
-    <h3>Pros</h3>
-    <ul>
-      <li *ngFor="let pro of affiliateProduct?.metadata?.pros">{{pro}}</li>
-    </ul>
-  </div>
-
-  <!-- Cons Card -->
-  <div class="cons-card">
+<div class="grid-item">
+  <mat-card class="content-card">
     <h3>Cons</h3>
-    <ul>
-      <li *ngFor="let con of affiliateProduct?.metadata?.cons">{{con}}</li>
-
-    </ul>
+      <ul>
+        <li *ngFor="let con of affiliateProduct?.metadata?.cons">{{con}}</li>
+      </ul>
+  </mat-card>
   </div>
+
 </div>
 
 

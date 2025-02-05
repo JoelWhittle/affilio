@@ -15,8 +15,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class SocialActivityComponent implements OnInit {
 
-
-
   gridCols: string = '1fr';
 
   ngOnInit() {

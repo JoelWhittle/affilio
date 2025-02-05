@@ -139,12 +139,13 @@ h3 {
   font-family: 'Poppins', sans-serif;
 }
 
-p {
+p, ul {
   font-size: 1rem;
   color: $text-dark;
   line-height: 1.6;
   font-family: 'Poppins', sans-serif;
 }
+
 
 
 .last-modified {
@@ -240,10 +241,8 @@ text-overflow: ellipsis;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: left;
-    max-width: none;
+    max-width: none ;
   }
-
-
 
 }
 
