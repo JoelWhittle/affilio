@@ -132,7 +132,7 @@ h2 {
   color: $primary;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
-  text-align: center;
+  text-align: left;
   hyphens:auto !important;
 
 }
@@ -230,7 +230,9 @@ text-overflow: ellipsis;
 
 
 
-
+ strong {
+  color:$primary
+}
 
 @media (min-width: 768px) {
 
@@ -253,6 +255,10 @@ text-overflow: ellipsis;
 
 }
 
+
+ h2 {
+  text-align: center
+};
 }
 
 @media (min-width: 1024px) {

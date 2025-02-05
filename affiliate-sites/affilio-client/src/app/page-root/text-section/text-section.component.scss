@@ -45,6 +45,9 @@
       }
     }
 
+    .title-wrapper{
+      padding-left: 20px;
+    }
     /* Tablet & Desktop Styles */
     @media (min-width: 768px) {
       .paragraph-content {
@@ -72,6 +75,20 @@
           max-width: 50%;
         }
       }
+
+      .title-wrapper{
+        padding-left: 0px;
+      }
+
+
     }
+  }
+}
+
+
+@media (min-width: 768px) {
+  h3 {
+    text-align: left !important;
+    font-size: 100px !important;
   }
 }

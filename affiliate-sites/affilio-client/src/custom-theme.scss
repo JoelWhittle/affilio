@@ -8,6 +8,11 @@ $primary: #3e2723; // Dark brown for footer (primary color)
 $accent: #ffcc80;  // Light orange accent color
 $secondary: #ffab91; // Soft orange for links
 
+// $primary: #556B2F; // Olive for footer (primary color)
+// $accent:  #FFB347;  // Apricot accent color
+// $secondary: #E08E2E; // Soft apricot for links
+
+
 // Background and UI Elements
 $text:  lighten($primary, 90%); // Text color contrast (white)
 $text-muted: lighten($primary, 60%); // Muted gray for footer bottom text

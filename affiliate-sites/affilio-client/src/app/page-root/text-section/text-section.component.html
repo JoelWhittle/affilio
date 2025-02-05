@@ -1,5 +1,6 @@
 <section class="text-section">
-  <h2>{{ metadata.title }}</h2>
+
+  <h2 class="title-wrapper">{{ metadata.title }}</h2>
 
   <div *ngFor="let paragraph of metadata.paragraphs" class="paragraph-container" [ngClass]="'image-' + (paragraph.image?.imagePosition || 'default')">
     <div class="paragraph-content">
