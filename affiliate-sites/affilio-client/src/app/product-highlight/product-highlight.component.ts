@@ -56,7 +56,7 @@ export class ProductHighlightComponent implements OnInit {
     if (width <= 768) {
       this.gridCols = '1fr'; // Single column
     } else if (width <= 1200) {
-      this.gridCols = '1fr 1fr'; // Two columns
+      this.gridCols = '1fr'; // Two columns
     } else {
       this.gridCols = '1fr 1fr 1fr'; // Three columns
     }

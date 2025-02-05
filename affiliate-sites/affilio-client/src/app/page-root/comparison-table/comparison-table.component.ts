@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,8 +13,29 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './comparison-table.component.html',
   styleUrls: ['./comparison-table.component.scss'],
 })
-export class ComparisonTableComponent {
+export class ComparisonTableComponent implements OnInit {
   @Input() metadata: any;
   @Input() affiliateProducts: any[] = [];
 
+
+    gridCols: string = '1fr';
+
+    ngOnInit() {
+      this.adjustGridCols(window.innerWidth);
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any) {
+      this.adjustGridCols(event.target.innerWidth);
+    }
+
+    adjustGridCols(width: number) {
+      if (width <= 768) {
+        this.gridCols = '1fr'; // Single column
+      } else if (width <= 1200) {
+        this.gridCols = '1fr'; // Two columns
+      } else {
+        this.gridCols = '1fr 1fr 1fr'; // Three columns
+      }
+    }
 }

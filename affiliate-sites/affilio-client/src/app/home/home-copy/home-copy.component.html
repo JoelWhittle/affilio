@@ -5,8 +5,7 @@
     {{metadata.text}}
   </p>
 </header>
-
-  <div class="content-grid">
+<div class="content-grid" [style.grid-template-columns]="gridCols">
     <div class="grid-item"  *ngFor="let card of metadata.cards">
     <div class="content-card">
       <h3>{{card.title}}</h3>
