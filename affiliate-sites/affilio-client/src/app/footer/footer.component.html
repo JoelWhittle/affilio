@@ -21,7 +21,6 @@
         <h4>Follow Us</h4>
         <div class="social-icons">
 
-<!-- Facebook -->
 
 @if (tenant()?.metadata.social.facebook) {
 <a href="{{tenant()?.metadata.social.facebook}}" target="_blank" rel="noopener noreferrer">
@@ -29,14 +28,12 @@
 </a>
 }
 
-<!-- Twitter -->
 @if (tenant()?.metadata.social.twitter) {
 
 <a href="{{tenant()?.metadata.social.twitter}}" target="_blank" rel="noopener noreferrer">
-  <i class="social-icon fab fa-x"></i> <!-- Use fa-twitter instead of fa-x for correct icon -->
+  <i class="social-icon fab fa-x"></i>
 </a>
 }
-<!-- Instagram -->
 @if (tenant()?.metadata.social.instagram) {
 
 <a href="{{tenant()?.metadata.social.instagram}}" target="_blank" rel="noopener noreferrer">
