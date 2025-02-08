@@ -89,4 +89,8 @@ export class PageRootComponent implements OnInit {
         console.log(this.pageContent);
 
   }
+
+  getDynamicData(component: any): any {
+    return this.pageContent.dynamicData.find((data: any) => data.componentId === component.id)?.data ;
+  }
 }

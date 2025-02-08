@@ -2,7 +2,9 @@
 <section class="featured-blog-posts">
   <h2>Featured Blog Posts</h2>
   <div class="content-grid" [style.grid-template-columns]="gridCols">
-    <div *ngFor="let post of featuredPosts" class="grid-item">
+    <div *ngFor="let post of data" class="grid-item">
+      <div>{{post | json}}</div>
+
       <mat-card class="content-card">
         <mat-card-header>
           <mat-card-title>{{ post.title }}</mat-card-title>
