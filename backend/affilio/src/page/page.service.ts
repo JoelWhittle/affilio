@@ -123,10 +123,47 @@ export class PageService {
       },
     });
   
-    // Return the page and include the blog post if it exists
+const dynamicData: { componentId: string; data: any }[] = [];
+
+for (const component of page.components) {
+  if (component.type == 'FEATURED-BLOGS') {
+    const posts = await this.prisma.blogPost.findMany({
+      where: {
+        tenantId: tenant.id,
+      },
+      include: {
+        author: {
+          include: {
+            media: true,
+          },
+        },
+        media: true,
+        page: true
+      },
+    });
+    console.log(posts);
+    const data: any = [];
+     let count = 0;
+    for (const post of posts) {
+       if (post.id !== blogPost?.id) {
+      data.push(post);
+       count++;
+    }
+    if (count === 3) break;
+     }
+
+    dynamicData.push({
+      componentId: component.id,
+      data: data,
+    });
+  }
+}
+
+
     return {
       ...page,
-      blogPost: blogPost || null, // Add blogPost if found, otherwise null
+      blogPost: blogPost || null, 
+      dynamicData: dynamicData
     };
   }
   
