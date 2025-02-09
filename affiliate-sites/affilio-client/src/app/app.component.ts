@@ -7,11 +7,12 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { environment } from '../environments/environment';  // Import the environment file
 import { TenantService } from './services/tenant.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatButtonModule, MatCardModule, FooterComponent, NavBarComponent, HttpClientModule  // Add HttpClientModule here
+  imports: [RouterOutlet, MatButtonModule, MatCardModule, FooterComponent, NavBarComponent, HttpClientModule, CommonModule  // Add HttpClientModule here
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
