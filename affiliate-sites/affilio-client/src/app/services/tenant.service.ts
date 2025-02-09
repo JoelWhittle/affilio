@@ -9,7 +9,7 @@ export class TenantService {
 
     // Signals for State Management
     tenant = signal<any | null>(null);
-    loading = signal<boolean>(false);
+    loading = signal<boolean>(true);
     error = signal<string | null>(null);
     private readonly apiUrl = `${environment.apiBaseUrl}/tenants`;
     constructor(private http: HttpClient) {}
