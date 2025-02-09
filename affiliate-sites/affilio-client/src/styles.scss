@@ -236,7 +236,7 @@ text-overflow: ellipsis;
 
 .content-grid {
   display: grid;
-  gap: 20px;
+  gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 0 auto;
   padding: 0 20px;
@@ -259,13 +259,13 @@ text-overflow: ellipsis;
 
 
 section {
-  padding: 60px 80px !important;
+  padding: 60px 100px !important;
 }
 
 }
 
 @media (min-width: 1024px) {
   section {
-    padding: 60px 100px !important;
+    padding: 60px 140px !important;
   }
 }
