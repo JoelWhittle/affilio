@@ -259,11 +259,13 @@ text-overflow: ellipsis;
 
 
 section {
-  padding: 60px 20px;
+  padding: 60px 80px !important;
 }
 
 }
 
 @media (min-width: 1024px) {
-
+  section {
+    padding: 60px 100px !important;
+  }
 }
