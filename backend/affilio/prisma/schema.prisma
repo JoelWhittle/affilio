@@ -27,8 +27,11 @@ model Media {
   components  PageComponent[] @relation("MediaToPageComponents") // Many-to-many
   affiliateProducts  AffiliateProduct[] @relation("MediaToAffiliateProducts") // Many-to-many
 
+
   Author   Author?
   BlogPost BlogPost?
+  socialMediaActivities SocialMediaActivity?
+  supportedOrganizations SupportedOrganization?
 
 }
 
@@ -46,6 +49,8 @@ model User {
   pagesCreated             Page[]             @relation("PageCreatedBy")
   affiliateProductsCreated AffiliateProduct[] @relation("AffiliateProductCreatedBy")
   blogPostsCreated         BlogPost[]         @relation("BlogPostCreatedBy")
+  socialMediaActivitiesCreated         SocialMediaActivity[]         @relation("SocialMediaActivityCreatedBy")
+
 }
 
 model Tenant {
@@ -64,6 +69,8 @@ model Tenant {
   affiliateProducts AffiliateProduct[] @relation("TenantAffiliateProducts")
   categories        Category[]         @relation("TenantCategories")
   blogPosts         BlogPost[]         @relation("TenantBlogPosts")
+  socialMediaActivities         SocialMediaActivity[]         @relation("TenantSocialMediaActivities")
+  supportedOrganizations         SupportedOrganization[]         @relation("TenantSupportedOrganizations")
 
   apiKey   String @unique
   metadata Json? // Stores metadata as a JSON object
@@ -87,6 +94,7 @@ model Page {
   previousVersion String?         @db.Uuid // Reference to the previous version
   blogPosts       BlogPost[]      @relation("PageBlogPosts")
   affiliateProducts       AffiliateProduct[]      @relation("PageAffiliateProducts")
+  socialMediaActivities   SocialMediaActivity[]      @relation("PageSocialMediaActivities")
 
   components      PageComponent[] @relation("PageComponents")
 }
@@ -180,6 +188,46 @@ model BlogPost {
   description       String             @default("description")
   media   Media  @relation(fields: [mediaId], references: [id]) // Required media
   mediaId String @unique @db.Uuid
+}
+
+model SocialMediaActivity {
+  id              String        @id @default(uuid()) @db.Uuid
+  tenantId        String        @db.Uuid
+  tenant          Tenant        @relation("TenantSocialMediaActivities", fields: [tenantId], references: [id])
+  media   Media  @relation(fields: [mediaId], references: [id]) // Required media
+  mediaId String @unique @db.Uuid
+  pageId          String?       @db.Uuid
+  page            Page?         @relation("PageSocialMediaActivities", fields: [pageId], references: [id])
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  createdBy       String        @db.Uuid
+  createdByUser   User          @relation("SocialMediaActivityCreatedBy", fields: [createdBy], references: [id])
+  name            String        
+  description     String
+  platform        SocialMediaPlatform
+}
+
+model SupportedOrganization {
+id      String    @id @default(uuid())   @db.Uuid
+tenantId  String  @db.Uuid
+tenant    Tenant  @relation("TenantSupportedOrganizations", fields: [tenantId], references: [id])
+  media   Media  @relation(fields: [mediaId], references: [id]) // Required media
+  mediaId String @unique @db.Uuid
+url String 
+name    String
+description   String
+createdAt       DateTime      @default(now())
+updatedAt       DateTime      @updatedAt
+}
+
+enum SocialMediaPlatform {
+  Facebook
+  Twitter
+  Snapchat
+  Instagram
+  LinkedIn
+  TikTok
+  YouTube
 }
 
 enum CategoryType {

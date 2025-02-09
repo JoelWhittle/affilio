@@ -178,6 +178,53 @@ for (const component of page.components) {
      component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
 
   }
+
+
+  if (component.type == 'LATEST-SOCIAL-MEDIA') {
+    const socialPosts = await this.prisma.socialMediaActivity.findMany({
+      where: {
+        tenantId: tenant.id,
+      },
+      include: {
+        media: true,
+      },
+    });
+    const data: any = [];
+     let count = 0;
+    for (const socialPost of socialPosts) {
+      data.push(socialPost);
+       count++;
+    
+    if (count === 3) break;
+     }
+
+     component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
+
+  }
+
+
+  if (component.type == 'WE-SUPPORT-BANNER') {
+    const supportedOrganizations = await this.prisma.supportedOrganization.findMany({
+      where: {
+        tenantId: tenant.id,
+      },
+      include: {
+        media: true,
+      },
+    });
+    const data: any = [];
+     let count = 0;
+    for (const supportedOrganization of supportedOrganizations) {
+      data.push(supportedOrganization);
+       count++;
+    
+    if (count === 3) break;
+     }
+
+     component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
+
+  }
+
 }
 
 

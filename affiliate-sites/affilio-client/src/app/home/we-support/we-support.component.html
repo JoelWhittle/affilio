@@ -1,13 +1,13 @@
 <section class="we-support">
-  <h2>{{metadata.title}}</h2>
+  <h2>{{data.metadata.title}}</h2>
   <p class="section-intro-text">
-    {{metadata.text}}
+    {{data.metadata.text}}
   </p>
 
   <div class="content-grid" [style.grid-template-columns]="gridCols">
-    <div *ngFor="let support of supportItems" class="grid-item">
+    <div *ngFor="let support of data.metadata.dynamicData" class="grid-item">
       <mat-card class="content-card">
-        <img [src]="support.logo" [alt]="support.name" class="support-logo" />
+        <img [src]="support.media.src" [alt]="support.media.alt" class="support-logo" />
         <h3>{{ support.name }}</h3>
         <p>{{ support.description }}</p>
 

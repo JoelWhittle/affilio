@@ -1,22 +1,22 @@
 <section class="social-activity">
-  <h2>Social Activity</h2>
+  <h2>{{data.metadata.title}}</h2>
   <div class="content-grid" [style.grid-template-columns]="gridCols">
-    <div *ngFor="let post of socialPosts" class="grid-item">
+    <div *ngFor="let post of data.metadata.dynamicData" class="grid-item">
       <mat-card class="content-card">
         <div class="social-post-header">
-          <i class="platform-icon"  [class]="getPlatformIcon(post.link)" aria-hidden="true"></i>
-          <span class="platform-name">{{ getPlatformName(post.link) }}</span>
+          <i class="platform-icon"  [class]="getPlatformIcon(post.platform)" aria-hidden="true"></i>
+          <span class="platform-name">{{ getPlatformName(post.platform) }}</span>
         </div>
         <mat-card-header>
           <mat-card-title>{{ post.title }}</mat-card-title>
         </mat-card-header>
-        <img  class="card-img" mat-card-image [src]="post.thumbnail" alt="{{ post.title }}">
+        <img  class="card-img" mat-card-image [src]="post.media.src" alt="{{ post.media.alt }}">
         <mat-card-content>
-          <p class="no-wrap">{{ post.excerpt }}</p>
-          <small class="last-modified">Last Modified: {{ post.date | date: 'mediumDate' }}</small>
+          <p class="no-wrap">{{ post.description }}</p>
+          <small class="last-modified">Last Modified: {{ post.updatedAt | date: 'mediumDate' }}</small>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToPost(post.link)">
+          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToPost(post.url)">
             Read More
           </button>
         </mat-card-actions>

@@ -11,7 +11,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [CommonModule, MatButtonModule, MatCardModule],
 })
 export class WeSupportComponent implements OnInit {
-  @Input() metadata: any ;
+  @Input() data: any ;
   gridCols: string = '1fr';
 
   @HostListener('window:resize', ['$event'])
@@ -23,26 +23,6 @@ export class WeSupportComponent implements OnInit {
     this.adjustGridCols(window.innerWidth);
   }
 
-  supportItems = [
-    {
-      name: 'Rabbit Rescue Foundation',
-      description: 'Dedicated to finding abandoned rabbits loving homes.',
-      logo: '../assets/rabbit-background.png',
-      link: 'https://rabbitrescue.org',
-    },
-    {
-      name: 'Bunny Wellness Initiative',
-      description: 'Promoting health and wellness for rabbits through education.',
-      logo: '../assets/rabbit-background.png',
-      link: 'https://bunnywellness.com',
-    },
-    {
-      name: 'Adopt-A-Bunny',
-      description: 'Helping connect families with bunnies in need of homes.',
-      logo: '../assets/rabbit-background.png',
-      link: 'https://adoptabunny.org',
-    },
-  ];
 
   navigateToSupport(link: string): void {
     window.open(link, '_blank');

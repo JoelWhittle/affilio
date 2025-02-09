@@ -43,12 +43,12 @@
 ></app-home-copy >
 
 <app-social-activity *ngIf="component.type === 'LATEST-SOCIAL-MEDIA'"
-[metadata]="component.metadata"
+[data]="component"
 
 ></app-social-activity >
 
 <app-we-support *ngIf="component.type === 'WE-SUPPORT-BANNER'"
-[metadata]="component.metadata"
+[data]="component"
 ></app-we-support >
 
 
