@@ -25,7 +25,8 @@
 
 
 <app-featured-blog-posts *ngIf="component.type === 'FEATURED-BLOGS'"
-
+[data]="component"
+[dynamicData]="getDynamicData(component)"
 ></app-featured-blog-posts >
 
 

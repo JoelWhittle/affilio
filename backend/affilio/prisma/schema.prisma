@@ -170,7 +170,7 @@ model BlogPost {
   page              Page?              @relation("PageBlogPosts", fields: [pageId], references: [id])
   affiliateProducts AffiliateProduct[] @relation("AffiliateProductBlogPosts")
   categories        Category[]         @relation("BlogPostCategories")
-
+  description       String             @default("description")
   media   Media  @relation(fields: [mediaId], references: [id]) // Required media
   mediaId String @unique @db.Uuid
 }

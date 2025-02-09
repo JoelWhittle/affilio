@@ -2,21 +2,21 @@
 <section class="featured-blog-posts">
   <h2>Featured Blog Posts</h2>
   <div class="content-grid" [style.grid-template-columns]="gridCols">
-    <div *ngFor="let post of data" class="grid-item">
-      <div>{{post | json}}</div>
+
+    <div *ngFor="let post of dynamicData" class="grid-item">
 
       <mat-card class="content-card">
         <mat-card-header>
-          <mat-card-title>{{ post.title }}</mat-card-title>
-          <mat-card-subtitle>{{ post.subtitle }}</mat-card-subtitle>
+          <mat-card-title>{{ post.name }}</mat-card-title>
+          <mat-card-subtitle> {{ post.description }}</mat-card-subtitle>
         </mat-card-header>
-        <img  class="card-img" mat-card-image [src]="post.image" alt="{{ post.title }}">
+        <img  class="card-img" mat-card-image [src]="post.media.src" alt="{{ post.media.alt }}">
         <mat-card-content>
           <p class="no-wrap">{{ post.excerpt }}</p>
-          <small class="last-modified">Last Modified: {{ post.lastModified | date: 'mediumDate' }}</small>
+          <small class="last-modified">Last Modified: {{ post.updatedAt | date: 'mediumDate' }}</small>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToPost(post.link)">
+          <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToPost(post.page.slug)">
             Read More
           </button>
         </mat-card-actions>
