@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 export class FeaturedBlogPostsComponent implements OnInit {
 
  @Input() data: any  ;
-  @Input() dynamicData: any ;
 
   gridCols: string = '1fr';
 

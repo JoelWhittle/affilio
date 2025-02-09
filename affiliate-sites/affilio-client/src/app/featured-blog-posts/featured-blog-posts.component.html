@@ -3,16 +3,16 @@
   <h2>Featured Blog Posts</h2>
   <div class="content-grid" [style.grid-template-columns]="gridCols">
 
-    <div *ngFor="let post of dynamicData" class="grid-item">
+    <div *ngFor="let post of data.metadata.dynamicData" class="grid-item">
 
       <mat-card class="content-card">
         <mat-card-header>
           <mat-card-title>{{ post.name }}</mat-card-title>
-          <mat-card-subtitle> {{ post.description }}</mat-card-subtitle>
         </mat-card-header>
         <img  class="card-img" mat-card-image [src]="post.media.src" alt="{{ post.media.alt }}">
         <mat-card-content>
-          <p class="no-wrap">{{ post.excerpt }}</p>
+          <p class="no-wrap"  class="no-wrap"> {{ post.description }}</p>
+
           <small class="last-modified">Last Modified: {{ post.updatedAt | date: 'mediumDate' }}</small>
         </mat-card-content>
         <mat-card-actions>

@@ -123,7 +123,6 @@ export class PageService {
       },
     });
   
-const dynamicData: { componentId: string; data: any }[] = [];
 
 for (const component of page.components) {
   if (component.type == 'FEATURED-BLOGS') {
@@ -152,10 +151,8 @@ for (const component of page.components) {
     if (count === 3) break;
      }
 
-    dynamicData.push({
-      componentId: component.id,
-      data: data,
-    });
+     component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
+
   }
 }
 
@@ -163,7 +160,6 @@ for (const component of page.components) {
     return {
       ...page,
       blogPost: blogPost || null, 
-      dynamicData: dynamicData
     };
   }
   
