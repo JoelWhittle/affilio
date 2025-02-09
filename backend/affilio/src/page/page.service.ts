@@ -154,6 +154,30 @@ for (const component of page.components) {
      component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
 
   }
+
+
+
+  if (component.type == 'FEATURED-PRODUCTS') {
+    const products = await this.prisma.affiliateProduct.findMany({
+      where: {
+        tenantId: tenant.id,
+      },
+      include: {
+        media: true,
+      },
+    });
+    const data: any = [];
+     let count = 0;
+    for (const product of products) {
+      data.push(product);
+       count++;
+    
+    if (count === 3) break;
+     }
+
+     component.metadata = { ...(typeof component.metadata === 'object' && component.metadata !== null ? component.metadata : {}), dynamicData: data };
+
+  }
 }
 
 

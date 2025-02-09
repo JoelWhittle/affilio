@@ -1,16 +1,16 @@
 <section class="featured-blog-posts">
   <h2>Featured Products</h2>
   <div class="content-grid" [style.grid-template-columns]="gridCols">
-    <div *ngFor="let product of featuredProducts" class="grid-item">
+    <div *ngFor="let product of data.metadata.dynamicData" class="grid-item">
       <mat-card class="content-card">
         <mat-card-header>
-          <mat-card-title>{{ product.title }}</mat-card-title>
+          <mat-card-title>{{ product.name }}</mat-card-title>
           <mat-card-subtitle>{{ product.subtitle }}</mat-card-subtitle>
         </mat-card-header>
-        <img  class="card-img" mat-card-image [src]="product.image" alt="{{ product.title }}">
+        <img  class="card-img" mat-card-image [src]="product.media[0].src" alt="{{ product.media[0].alt }}">
         <mat-card-content>
           <p class="no-wrap">{{ product.description }}</p>
-          <small class="last-modified">Last Modified: {{ product.lastModified | date: 'mediumDate' }}</small>
+          <small class="last-modified">Last Modified: {{ product.updatedAt | date: 'mediumDate' }}</small>
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button class="cta-button-primary" color="primary" (click)="navigateToProduct(product.link)">

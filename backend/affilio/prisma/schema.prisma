@@ -86,6 +86,8 @@ model Page {
   version         Int             @default(1) // Tracks version of the page
   previousVersion String?         @db.Uuid // Reference to the previous version
   blogPosts       BlogPost[]      @relation("PageBlogPosts")
+  affiliateProducts       AffiliateProduct[]      @relation("PageAffiliateProducts")
+
   components      PageComponent[] @relation("PageComponents")
 }
 
@@ -135,6 +137,11 @@ model AffiliateProduct {
   name            String
   media           Media[]            @relation("MediaToAffiliateProducts") // Many-to-many
   description     String
+  subtitle        String        @default("")
+
+  pageId            String?            @db.Uuid
+  page              Page?              @relation("PageAffiliateProducts", fields: [pageId], references: [id])
+
   price           Decimal?
   affiliateUrl    String
   categories      Category[]     @relation("AffiliateProductCategories")
