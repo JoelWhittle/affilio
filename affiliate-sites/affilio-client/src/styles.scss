@@ -228,8 +228,18 @@ text-overflow: ellipsis;
 
 
  strong {
-  color:$primary
+  color: $primary
 }
+
+
+.error-message {
+  color: $error;
+}
+
+.success-message {
+  color: $success;
+}
+
 
 @media (min-width: 768px) {
 

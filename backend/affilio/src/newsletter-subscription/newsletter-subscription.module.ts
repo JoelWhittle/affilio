@@ -10,4 +10,4 @@ import { PrismaModule } from '../prisma/prisma.module';
   providers: [NewsletterSubscriptionService],
   controllers: [NewsletterSubscriptionController],
 })
-export class UserModule {}
+export class NewsletterSubscriptionModule {}

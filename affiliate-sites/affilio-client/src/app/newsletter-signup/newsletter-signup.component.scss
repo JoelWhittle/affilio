@@ -1,10 +1,10 @@
 @import '../../custom-theme.scss'; // Import your Material theme
+
 .newsletter-signup {
   text-align: center;
-background-color:$background-dark-variant;
+  background-color: $background-dark-variant;
 
   .form-group {
-    margin-bottom: 20px;
     display: inline-block;
     text-align: left;
   }
@@ -14,6 +14,7 @@ background-color:$background-dark-variant;
     color: $text-dark;
     display: block;
     margin-bottom: 8px;
+    font-weight: bold;
   }
 
   .email-input {
@@ -26,22 +27,7 @@ background-color:$background-dark-variant;
     margin-bottom: 12px;
   }
 
-  .error-message {
-    color: red;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  .success-message {
-    color: green;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  h2{
+  h2 {
     text-align: center;
   }
-
-
-
 }

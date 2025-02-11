@@ -1,9 +1,14 @@
 <section class="newsletter-signup">
-  <h2 class="newsletter-header">{{title}}</h2>
+  <h2 class="newsletter-header">{{metadata.title ?? 'Sign Up To Our Newsletter'}}</h2>
 
-  <p class="section-intro-text">
-    {{subtitle}}
+  <p class="section-intro-text" style="text-align: center;">
+    {{metadata.subtitle ?? 'Get the latest news and updates from us.'}}
   </p>
+
+<div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+<mat-spinner></mat-spinner>
+</div>
+  <div *ngIf="!isLoading">
 
   <form #newsletterForm="ngForm" (ngSubmit)="subscribeToNewsletter()">
     <div class="form-group">
@@ -14,26 +19,32 @@
         type="email"
         name="email"
         [(ngModel)]="email"
+        (ngModelChange)="resetAlreadySubscribed()"
         #emailControl="ngModel"
         required
         email
         class="email-input">
-
-      <mat-error *ngIf="emailControl.invalid && emailControl.touched">
-        Please enter a valid email address.
-      </mat-error>
     </div>
 
     <div *ngIf="isInvalidEmail" class="error-message">
-      Invalid email. Please provide a valid email address.
+      {{metadata.invalidEmailMessage?? 'Please provide a valid email address.'}}
     </div>
 
-    <div *ngIf="isSubmitted" class="success-message">
-      Thank you for subscribing!
+    <div *ngIf="succesfullySubscribed" class="success-message">
+      {{metadata.successMessage ?? 'Thank you for subscribing!'}}
+    </div>
+
+    <div *ngIf="alreadySubscribed" class="error-message">
+      {{metadata.alreadySubscribedMessage ?? 'You are already subscribed. Thank you!'}}
+    </div>
+
+    <div *ngIf="errorSubscribing" class="error-message">
+      {{metadata.errorMessage ?? 'Sorry, there has been an error. Please try again later.'}}
     </div>
 
     <div class="button-container">
-      <button mat-raised-button class="cta-button-accent" color="accent"  [disabled]="newsletterForm.invalid">Subscribe</button>
+      <button mat-raised-button class="cta-button-accent" color="accent" [disabled]="newsletterForm.invalid">Subscribe</button>
     </div>
   </form>
+</div>
 </section>

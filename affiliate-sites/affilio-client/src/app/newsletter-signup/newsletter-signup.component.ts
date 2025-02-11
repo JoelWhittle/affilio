@@ -4,7 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import MatProgressSpinnerModule
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { NewsletterSubscriptionService } from '../services/newsletter-subscription.service';
 
 @Component({
   selector: 'app-newsletter-signup',
@@ -17,19 +19,25 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule // Add FormsModule here
+    MatProgressSpinnerModule, // Add MatProgressSpinnerModule here
+    FormsModule, // Add FormsModule here
   ]
 })
 export class NewsletterSignupComponent {
 
-@Input() title: string = 'Subscribe to Our Newsletter';
-  @Input() subtitle: string = 'Stay up to date with the latest blog posts, featured products';
+  constructor( private service: NewsletterSubscriptionService) {}
+
+@Input() metadata: any;
+
 
   email: string = ''; // Explicitly typed as a string
   isSubmitted: boolean = false;
   isInvalidEmail: boolean = false;
+  isLoading: boolean = false;
+  errorSubscribing: boolean = false;
+  succesfullySubscribed: boolean = false;
+  alreadySubscribed: boolean = false;
 
-  // Form submission logic
   subscribeToNewsletter(): void {
     // Basic email validation
     if (!this.email || !this.isValidEmail(this.email)) {
@@ -37,11 +45,40 @@ export class NewsletterSignupComponent {
       return;
     }
 
+    // Reset flags before submission
     this.isInvalidEmail = false;
     this.isSubmitted = true;
+    this.isLoading = true;
+    this.errorSubscribing = false;
+    this.succesfullySubscribed = false;
+    this.alreadySubscribed = false;
 
-    // Handle subscription logic here (e.g., sending to a service)
-    alert(`Thank you for subscribing with email: ${this.email}`);
+    // Make the API call
+    this.service.subscribeToNewsletter(this.email).subscribe({
+      next: (response) => {
+        if (response?.message === 'Subscription already exists') {
+          this.alreadySubscribed = true;
+        } else {
+          this.succesfullySubscribed = true;
+        }
+      },
+      error: (err) => {
+        console.error('Subscription error:', err);
+        this.errorSubscribing = true;
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
+      }
+    });
+  }
+
+  resetAlreadySubscribed(): void {
+    if (this.alreadySubscribed) {
+      this.alreadySubscribed = false;
+      this.succesfullySubscribed = false;
+      this.errorSubscribing = false;
+    }
   }
 
   // Simple email validation

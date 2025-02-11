@@ -7,9 +7,10 @@ import { UserModule } from './user/user.module';
 import { TenantModule } from './tenant/tenant.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { PageModule } from './page/page.module';
+import { NewsletterSubscriptionModule } from './newsletter-subscription/newsletter-subscription.module';
 
 @Module({
-  imports: [UserModule, TenantModule, PageModule, PrismaModule],
+  imports: [UserModule, TenantModule, PageModule, NewsletterSubscriptionModule, PrismaModule],
   controllers: [AppController],
   providers: [AppService],
 })

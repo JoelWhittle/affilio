@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.module';
 import { CreateNewsletterSubscriptionDto } from './dto/create-newsletter-subscription-dto';
 import { CancelNewsletterSubscriptionDto } from './dto/cancel-newsletter-subscription-dto';
@@ -12,36 +12,50 @@ export class NewsletterSubscriptionService {
   async createNewsletterSubscription(createNewsletterSubscriptionDto: CreateNewsletterSubscriptionDto) {
     const { email, tenantId } = createNewsletterSubscriptionDto;
     
-    const testSubscription = await this.prisma.newsletterSubscription.findFirst({
-      where: {
-        email: email,
-        tenantId: tenantId,
-        cancelled: false
+    try {
+
+
+      const tenant = await this.prisma.tenant.findFirst({
+        where: {
+          id: tenantId,
+        }
+      });
+
+      if (!tenant) {
+       throw new InternalServerErrorException('Tenant not found');
       }
-    });
+      const testSubscription = await this.prisma.newsletterSubscription.findFirst({
+        where: {
+          email: email,
+          tenantId: tenant.id,
+          cancelled: false
+        }
+      });
 
-    if (testSubscription) {
-      return {
-        message: 'Subscription already exists',
-        subscription: testSubscription
+      if (testSubscription) {
+        return {
+          message: 'Subscription already exists',
+          subscription: testSubscription
+        };
+      }
+
+      // Prepare the user data object
+      const subscriptionData: any = {
+        email: email,
+        tenantId: tenant.id,
+        cancelled: false
       };
+    
+      // Create the user
+      const subscription = await this.prisma.newsletterSubscription.create({
+        data: subscriptionData,
+      });
+    
+      return subscription;
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
     }
-
-    // Prepare the user data object
-    const subscriptionData: any = {
-      email: email,
-      tenantId: tenantId,
-      cancelled: false
-    };
-  
-    // Create the user
-    const subscription = await this.prisma.newsletterSubscription.create({
-      data: subscriptionData,
-    });
-  
-    return subscription;
   }
-  
 
   async cancelNewsletterSubscription(cancelNewsletterSubscriptionDto: CancelNewsletterSubscriptionDto) {
     const { id } = cancelNewsletterSubscriptionDto;
