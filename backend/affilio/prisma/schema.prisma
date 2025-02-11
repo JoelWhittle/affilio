@@ -13,6 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model NewsletterSubscription {
+  id          String   @id @default(uuid()) @db.Uuid
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  email       String   @unique
+  cancelled   Boolean
+  cancelledAt DateTime?
+  tenantId        String         @db.Uuid
+  tenant          Tenant         @relation("TenantNewsletterSubscriptions", fields: [tenantId], references: [id])
+}
+
 model Media {
   id          String          @id @default(uuid()) @db.Uuid
   src         String
@@ -50,7 +61,6 @@ model User {
   affiliateProductsCreated AffiliateProduct[] @relation("AffiliateProductCreatedBy")
   blogPostsCreated         BlogPost[]         @relation("BlogPostCreatedBy")
   socialMediaActivitiesCreated         SocialMediaActivity[]         @relation("SocialMediaActivityCreatedBy")
-
 }
 
 model Tenant {
@@ -69,6 +79,8 @@ model Tenant {
   affiliateProducts AffiliateProduct[] @relation("TenantAffiliateProducts")
   categories        Category[]         @relation("TenantCategories")
   blogPosts         BlogPost[]         @relation("TenantBlogPosts")
+  newsletterSubscriptions         NewsletterSubscription[]         @relation("TenantNewsletterSubscriptions")
+
   socialMediaActivities         SocialMediaActivity[]         @relation("TenantSocialMediaActivities")
   supportedOrganizations         SupportedOrganization[]         @relation("TenantSupportedOrganizations")
 
