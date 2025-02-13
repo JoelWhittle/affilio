@@ -6,8 +6,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TenantService {
 
-
-    // Signals for State Management
     tenant = signal<any | null>(null);
     loading = signal<boolean>(false);
     error = signal<string | null>(null);
@@ -22,7 +20,7 @@ export class TenantService {
           next: (data: any) => {
             console.log("heere")
             console.log(data);
-            this.tenant.set(data); // Update tenant signal
+            this.tenant.set(data);
             this.loading.set(false);
           },
           error: (err: any) => {

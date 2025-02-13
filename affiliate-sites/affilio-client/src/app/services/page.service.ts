@@ -8,10 +8,6 @@ import { Router } from '@angular/router';
 export class PageService {
 
 
-    // // Signals for State Management
-    // page = signal<any | null>(null);
-    // loading = signal<boolean>(false);
-    // error = signal<string | null>(null);
     private readonly apiUrl = `${environment.apiBaseUrl}/page`;
     constructor(private http: HttpClient, private router: Router) {}
 
@@ -33,9 +29,8 @@ export class PageService {
             console.log("Page not found (404), navigating to 404 page.");
             this.router.navigate(['/404']);
           } else {
-            // Handle other errors as needed
             console.log("An unexpected error occurred, handling it.");
-            this.router.navigate(['/error']);  // Or wherever you'd want to navigate for other errors
+            this.router.navigate(['/error']);
           }
         });
 
