@@ -31,11 +31,11 @@ export class ComparisonTableComponent implements OnInit {
 
     adjustGridCols(width: number) {
       if (width <= 768) {
-        this.gridCols = '1fr'; // Single column
+        this.gridCols = '1fr';
       } else if (width <= 1200) {
-        this.gridCols = '1fr'; // Two columns
+        this.gridCols = '1fr';
       } else {
-        this.gridCols = '1fr 1fr 1fr'; // Three columns
+        this.gridCols = '1fr 1fr 1fr';
       }
     }
 }
